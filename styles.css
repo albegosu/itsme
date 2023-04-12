@@ -1,0 +1,10 @@
+#bgTop {
+    background-image: url(resources/pngwing.com\ \(5\).png);
+    background-position-x: right;
+    background-repeat: no-repeat;
+}
+
+#bgTop:hover {
+    background-color: #212529 !important;
+    color: #fff;
+}
