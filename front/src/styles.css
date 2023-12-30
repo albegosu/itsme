@@ -1,0 +1,26 @@
+/* BOOSTRAP ICONS */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+/* MENU TOOLTIP TIPPI */
+@import 'tippy.js/dist/tippy.css';
+/** Arrow */
+@import 'tippy.js/dist/svg-arrow.css';
+/** Themes */
+@import 'tippy.js/themes/light-border.css';
+@import 'tippy.js/themes/light.css';
+@import 'tippy.js/themes/material.css';
+@import 'tippy.js/themes/translucent.css';
+
+.body {
+  background-color: rgb(234, 234, 234);
+}
+
+/* TOOLTIP STYLES */
+.custom-class {
+  background-color: #FFDF7F;
+  color: black;
+}
+
+.tippy-arrow {
+  color: #FFDF7F;
+}
