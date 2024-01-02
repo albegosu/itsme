@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'itsme';
+
+  sidebarVisible: boolean = true;
+
+  hiddenSidebar(isVisible: boolean): void {
+    this.sidebarVisible = isVisible;
+  }
 }

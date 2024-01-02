@@ -1,7 +1,7 @@
-<header class="col-4">
-  <app-sidebar></app-sidebar>
+<header class="col" [ngClass]="{'col-4': sidebarVisible}">
+  <app-sidebar (sidebarChange)="hiddenSidebar($event)"></app-sidebar>
 </header>
-<div class="col">
+<div class="col" [ngClass]="{'col-11': !sidebarVisible}">
   <main>
     <h1>Hello!</h1>
   </main>

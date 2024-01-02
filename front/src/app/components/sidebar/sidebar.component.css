@@ -28,3 +28,19 @@
   margin-top: 15px;
   margin-left: 40px;
 }
+
+.btnPosition {
+  right: -15px;
+}
+
+.bi-door-open,
+.nav__anchor,
+li a {
+  transition: 0.3s;
+}
+
+.bi-door-open:hover,
+.nav__anchor:hover,
+li a:hover {
+  color: #FFC007;
+}
