@@ -1,4 +1,4 @@
-<header [ngClass]="{'col-2': sidebarVisible, 'headerWidth': !sidebarVisible}">
+<header class="p-0 m-0" [ngClass]="{'col-2': sidebarVisible, 'headerWidth': !sidebarVisible}">
   <app-sidebar class="sticky-top" (sidebarChange)="hiddenSidebar($event)"></app-sidebar>
 </header>
 <div class="col d-flex flex-column">
