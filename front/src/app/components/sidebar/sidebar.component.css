@@ -1,0 +1,46 @@
+.nav__name {
+  font-size: 30px;
+  font-weight: 700;
+  align-self: self-start;
+}
+
+.nav__nickname {
+  font-size: 25px;
+  font-weight: 100;
+  align-self: self-start;
+}
+
+.nav__description--title {
+  font-weight: 700;
+}
+
+.nav__location {
+  font-weight: 400;
+}
+
+.nav__anchor {
+  text-decoration: none;
+  color: black;
+}
+
+.nav__ul {
+  align-self: self-start;
+  margin-top: 15px;
+  margin-left: 40px;
+}
+
+.btnPosition {
+  right: -15px;
+}
+
+.bi-door-open,
+.nav__anchor,
+li a {
+  transition: 0.3s;
+}
+
+.bi-door-open:hover,
+.nav__anchor:hover,
+li a:hover {
+  color: #FFC007;
+}

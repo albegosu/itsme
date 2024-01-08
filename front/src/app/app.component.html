@@ -1,0 +1,10 @@
+<header class="p-0 m-0" [ngClass]="{'col-2': sidebarVisible, 'headerWidth': !sidebarVisible}">
+  <app-sidebar class="sticky-top" (sidebarChange)="hiddenSidebar($event)"></app-sidebar>
+</header>
+<div class="col d-flex flex-column">
+  <main class="vh-100">
+    <h1>Hello!</h1>
+  </main>
+
+  <app-footer class="sticky-bottom d-flex align-items-center justify-content-center pb-2"></app-footer>
+</div>
