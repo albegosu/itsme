@@ -1,3 +1,10 @@
 .headerWidth {
   max-width: 120px;
 }
+
+@media screen and (max-width: 390px) {
+  app-footer {
+    display: flex;
+    flex-direction: column;
+  }
+}

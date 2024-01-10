@@ -26,7 +26,7 @@
 .nav__ul {
   align-self: self-start;
   margin-top: 15px;
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 .btnPosition {
@@ -43,4 +43,14 @@ li a {
 .nav__anchor:hover,
 li a:hover {
   color: #FFC007;
+}
+
+@media screen and (max-width: 390px) {
+  .nav__name {
+    font-size: 1.3rem;
+  }
+
+  .nav__nickname{
+    font-size: 0.9rem;
+  }
 }
