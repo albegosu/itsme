@@ -53,4 +53,12 @@ li a:hover {
   .nav__nickname{
     font-size: 0.9rem;
   }
+
+  .nav__ul {
+    display: none;
+  }
+
+  #nav-link__proyects {
+    order: 3;
+  }
 }
