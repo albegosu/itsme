@@ -1,8 +1,32 @@
+header {
+  width: 320px;
+}
+
 .headerWidth {
   max-width: 120px;
 }
 
+.marginMain {
+  margin-left: 320px;
+}
+
+.noMargin {
+  margin-left: 120px;
+}
+
 @media screen and (max-width: 390px) {
+  header {
+    width: 100%;
+  }
+  .headerIndex{
+    width: 50px;
+  }
+  .headerWidth {
+    max-width: 50px;
+  }
+  .noMargin {
+    margin-left: 50px;
+  }
   app-footer {
     display: flex;
     flex-direction: column;

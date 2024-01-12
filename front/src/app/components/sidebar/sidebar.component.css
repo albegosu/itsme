@@ -1,17 +1,26 @@
 .nav__name {
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 600;
   align-self: self-start;
 }
 
+.nav__name--surname {
+  font-weight: 100;
+}
+
 .nav__nickname {
-  font-size: 25px;
+  font-size: 1rem;
   font-weight: 100;
   align-self: self-start;
 }
 
 .nav__description--title {
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.nav__description {
+  font-size: 0.8rem;
 }
 
 .nav__location {
@@ -23,10 +32,8 @@
   color: black;
 }
 
-.nav__ul {
-  align-self: self-start;
-  margin-top: 15px;
-  margin-left: 20px;
+.social {
+  margin-top: 30px;
 }
 
 .btnPosition {
@@ -46,19 +53,11 @@ li a:hover {
 }
 
 @media screen and (max-width: 390px) {
-  .nav__name {
-    font-size: 1.3rem;
+  .btnPosition {
+    right: 20px;
   }
-
-  .nav__nickname{
-    font-size: 0.9rem;
-  }
-
-  .nav__ul {
-    display: none;
-  }
-
-  #nav-link__proyects {
-    order: 3;
+  img {
+    min-width: 40px;
   }
 }
+
