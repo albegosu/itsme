@@ -1,5 +1,5 @@
-<header class="p-0 m-0 fixed-top" [ngClass]="{'col-md-4': sidebarVisible, 'headerWidth': !sidebarVisible}">
-  <app-sidebar class="" (sidebarChange)="hiddenSidebar($event)"></app-sidebar>
+<header class="p-0 m-0 fixed-top col-12" [ngClass]="{'col-md-4': sidebarVisible, 'headerWidth': !sidebarVisible}">
+  <app-sidebar class="h-100" (sidebarChange)="hiddenSidebar($event)"></app-sidebar>
 </header>
 <div class="col d-flex flex-column" [ngClass]="{'marginMain': sidebarVisible, 'noMargin': !sidebarVisible}">
   <main class="h-100 d-flex flex-column justify-content-center align-items-center">

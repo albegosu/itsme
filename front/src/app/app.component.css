@@ -1,5 +1,5 @@
 header {
-  width: 320px;
+  max-width: 320px;
 }
 
 .headerWidth {
@@ -16,13 +16,16 @@ header {
 
 @media screen and (max-width: 390px) {
   header {
-    width: 100%;
+    max-width: 100%;
   }
   .headerIndex{
-    width: 50px;
+    max-width: 50px;
   }
   .headerWidth {
     max-width: 50px;
+  }
+  .marginMain {
+    margin-left: auto;
   }
   .noMargin {
     margin-left: 50px;
