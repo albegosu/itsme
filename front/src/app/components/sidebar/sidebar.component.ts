@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: Event): void {
     // Puedes ajustar el valor según cuánto quieres que el usuario haga scroll antes de ocultar el sidebar
-    const scrollOffset = 75;
+    const scrollOffset = 50;
 
     if (window.pageYOffset > scrollOffset) {
       this.hideSidebar();
