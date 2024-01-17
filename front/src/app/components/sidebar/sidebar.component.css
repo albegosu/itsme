@@ -52,7 +52,7 @@ li a:hover {
   color: #FFC007;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .btnPosition {
     right: 20px;
   }
