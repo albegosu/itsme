@@ -4,5 +4,21 @@
 }
 
 .parallax {
-  background-color: cadetblue;
+   /* The image used */
+   background-image: url(../../../assets/5765758650_fe02097df5_o.jpg);
+
+   /* Set a specific height */
+   min-height: 500px;
+
+   /* Create the parallax scrolling effect */
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.midParallax {
+  height:1000px;
+  font-size:36px;
+  background-color: rgba(184, 184, 184, 0.132);
 }
