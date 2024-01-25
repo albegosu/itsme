@@ -18,7 +18,34 @@
 }
 
 .midParallax {
-  height:1000px;
-  font-size:36px;
+  height: 1000px;
   background-color: rgba(184, 184, 184, 0.132);
+}
+
+.cardContainer {
+  max-width: 25rem;
+  max-height: 25rem;
+  --bs-bg-opacity: .75;
+}
+
+.cardContainerMidParallax {
+  --bs-bg-opacity: .5;
+}
+
+.card-header {
+  background-color: transparent;
+}
+
+.card-footer {
+  background-color: transparent;
+}
+
+
+@media screen and (max-width: 480px) {
+  .parallax {
+    min-height: 1500px;
+  }
+  .cardContainer {
+    max-height: 38rem;
+  }
 }
