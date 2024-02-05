@@ -35,14 +35,16 @@
         </li>
           <ul class="collapse list-unstyled flex-column mx-auto" [ngClass]="{'mt-2': !sidebarVisible}" id="submenu0" data-bs-parent="#menu">
             <li class="w-100 px-3 px-lg-4 rounded-4 navItem_sub" ngxTippy="Proyectos de Front" >
-                <a routerLink="/pedidos" class="nav-link px-0 py-2 icon-link icon-link-hover">
+                <a href="#front" class="nav-link px-0 py-2 icon-link icon-link-hover">
                   <i class="fs-5 pb-4 bi bi-palette"></i>
-                  <span *ngIf="sidebarVisible" class=" ms-2">Front</span></a>
+                  <span *ngIf="sidebarVisible" class=" ms-2">Front</span>
+                </a>
             </li>
             <li class="w-100 px-3 px-lg-4 rounded-4 navItem_sub" ngxTippy="Proyectos FullStack">
-                <a routerLink="/gestionPedido" class="nav-link px-0 icon-link icon-link-hover">
+                <a href="#fullstack" class="nav-link px-0 icon-link icon-link-hover">
                   <i class="fs-5 pb-4 bi bi-arrows-fullscreen"></i>
-                  <span *ngIf="sidebarVisible" class="ms-2">Full Stack</span></a>
+                  <span *ngIf="sidebarVisible" class="ms-2">Full Stack</span>
+                </a>
             </li>
           </ul>
           <li class="list-unstyled" ngxTippy="Si quieres saber más de mi..." tippyClassName="custom-class" [tippyProps]="{ placement: 'right' }">

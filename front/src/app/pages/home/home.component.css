@@ -40,10 +40,20 @@
   background-color: transparent;
 }
 
+/* FOR TABLET */
+@media screen and (max-width: 780px) {
+  #parallaxJob {
+    min-height: 1100px;
+  }
+}
 
+/* FOR MOBILE */
 @media screen and (max-width: 480px) {
   .parallax {
     min-height: 1500px;
+  }
+  #parallaxJob{
+    min-height: 1800px;
   }
   .cardContainer {
     max-height: 38rem;
