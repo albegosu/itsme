@@ -1,30 +1,34 @@
-<form class="row justify-content-center contact-form m-4 p-4" style="max-width: 800px;" [formGroup]="contactForm" (ngSubmit)="sendEmail($event)">
+<h4 class="text-center">¡Contacta conmigo!</h4>
+<form class="container contact-form m-4 p-4" style="max-width: 800px;" [formGroup]="contactForm" (ngSubmit)="sendEmail($event)">
   <div class="row gap-2">
-      <div class="col">
-        <div class="form-floating">
-          <input type="text" class="form-control" id="user_name" placeholder="name@example.com" name="user_name" formControlName="user_name">
-          <label for="user_name">Nombre</label>
-          <p class="error" *ngIf="checkControl('user_name', 'required')">Campo es requerido</p>
-          <p class="error" *ngIf="checkControl('user_name', 'minlength')">La longitud minima es de 3 caracteres</p>
-          <p class="error" *ngIf="checkControl('user_name', 'pattern')">No admite caracteres especiales</p>
-        </div>
+    <div class="form-floating col-12 col-md-6">
+      <input type="text" class="form-control" id="user_name" placeholder="name@example.com" name="user_name" formControlName="user_name">
+      <label for="user_name" class="bg_label">Nombre</label>
+      <p class="error" *ngIf="checkControl('user_name', 'required')">Campo es requerido</p>
+      <p class="error" *ngIf="checkControl('user_name', 'minlength')">La longitud minima es de 3 caracteres</p>
+      <p class="error" *ngIf="checkControl('user_name', 'pattern')">No admite caracteres especiales</p>
+    </div>
+    <div class="col">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
+        <label for="floatingInputGrid">Apellido</label>
       </div>
-      <div class="col">
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
-          <label for="floatingInputGrid">Apellido</label>
-        </div>
-      </div>
+    </div>
     <div class="">
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" name="user_email" formControlName="user_email">
-        <label for="floatingInputGrid">Email</label>
+        <input type="email" class="form-control" id="user_email" placeholder="name@example.com" name="user_email" formControlName="user_email">
+        <label for="user_email">Email</label>
+        <p class="error" *ngIf="checkControl('user_email', 'required')">Debe introducir un correo válido</p>
+        <p class="error" *ngIf="checkControl('user_email', 'pattern')">Complete correctamente su dirección de email</p>
+        <p class="error" *ngIf="checkControl('user_email', 'maxlength')">El email no debe superar los 45 caracteres</p>
       </div>
     </div>
     <div class="form-floating">
-      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="message" formControlName="message"></textarea>
-      <label for="floatingTextarea2">Comentarios</label>
+      <textarea class="form-control" placeholder="Leave a comment here" id="message" style="height: 100px" name="message" formControlName="message"></textarea>
+      <label for="message" class="bg_label">Comentarios</label>
+    </div>
+    <div class="col align-self-end">
+      <button type="submit" class="btn btn-outline-light" [disabled]="contactForm.invalid">Enviar</button>
     </div>
   </div>
-  <input type="submit" value="Send" class="btn btn-primary">
 </form>
