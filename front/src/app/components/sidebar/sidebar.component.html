@@ -7,17 +7,19 @@
     </button>
   </div>
   <div class="d-flex flex-column align-items-center justify-content-center p-2">
+    <a href="#top" class="d-flex justify-content-center">
       <img src="../assets/Foto Alberto Glez.jpg" alt="Foto perfil" class="rounded-circle mt-4 border border-3 border-opacity-10 w-50" ngxTippy="Este soy yo, creo..." tippyClassName="custom-class" [tippyProps]="{ placement: 'right' }">
-      <section class="mx-3 mt-4">
-        <a *ngIf="sidebarVisible" routerLink="/" class="a">
-          <h3 class="nav__name mb-0"  ngxTippy="Parece que si..." tippyClassName="custom-class">Alberto <span class="nav__name--surname">Glez.</span></h3>
-          <span class="nav__nickname">albegosu</span>
-        </a>
-        <section *ngIf="sidebarVisible" class="mt-3">
-          <span class="nav__description--title">Jr. Full Stack Web Developer</span>
-          <p class="ms-1 nav__description">Angular | Vue3<br>Java | SpringBoot | NodeJS | Express</p>
-        </section>
+    </a>
+    <section class="mx-3 mt-4">
+      <a *ngIf="sidebarVisible" href="#top" class="a">
+        <h3 class="nav__name mb-0"  ngxTippy="Parece que si..." tippyClassName="custom-class">Alberto <span class="nav__name--surname">Glez.</span></h3>
+        <span class="nav__nickname">albegosu</span>
+      </a>
+      <section *ngIf="sidebarVisible" class="mt-3">
+        <span class="nav__description--title">Jr. Full Stack Web Developer</span>
+        <p class="ms-1 nav__description">Angular | Vue3<br>Java | SpringBoot | NodeJS | Express</p>
       </section>
+    </section>
     <ul [ngClass]="{'p-0 m-0 mb-4': !sidebarVisible}">
         <li class="list-unstyled" style="--bs-link-hover-color-rgb: 25, 135, 84;" ngxTippy="Sobre mi" tippyClassName="custom-class" [tippyProps]="{ placement: 'right' }">
           <a href="#aboutme" class="nav-link d-flex align-items-center px-0 icon-link icon-link-hover">
@@ -26,29 +28,14 @@
           </a>
         </li>
         <li class="list-unstyled" >
-          <a href="#submenu0" data-bs-toggle="collapse" class="nav-link px-0 d-flex align-items-center icon-link icon-link-hover" [ngClass]="{'mt-4': !sidebarVisible}" id="nav-link__proyects" ngxTippy="Mis proyectos" tippyClassName="custom-class" [tippyProps]="{ placement: 'right' }">
+          <a href="#proyectos" class="nav-link px-0 d-flex align-items-center icon-link icon-link-hover" [ngClass]="{'mt-4': !sidebarVisible}" id="nav-link__proyects" ngxTippy="Mis proyectos" tippyClassName="custom-class" [tippyProps]="{ placement: 'right' }">
             <i class="fs-5 fs-md-4 bi bi-code-slash"></i>
             <span *ngIf="sidebarVisible" class="ms-2 pt-3">Proyectos</span>
-            <i *ngIf="sidebarVisible" class="ms-2 pt-1 bi bi-caret-down"></i>
             <span class=""></span>
           </a>
         </li>
-          <ul class="collapse list-unstyled flex-column mx-auto" [ngClass]="{'mt-2': !sidebarVisible}" id="submenu0" data-bs-parent="#menu">
-            <li class="w-100 px-3 px-lg-4 rounded-4 navItem_sub" ngxTippy="Proyectos de Front" >
-                <a href="#front" class="nav-link px-0 py-2 icon-link icon-link-hover">
-                  <i class="fs-5 pb-4 bi bi-palette"></i>
-                  <span *ngIf="sidebarVisible" class=" ms-2">Front</span>
-                </a>
-            </li>
-            <li class="w-100 px-3 px-lg-4 rounded-4 navItem_sub" ngxTippy="Proyectos FullStack">
-                <a href="#fullstack" class="nav-link px-0 icon-link icon-link-hover">
-                  <i class="fs-5 pb-4 bi bi-arrows-fullscreen"></i>
-                  <span *ngIf="sidebarVisible" class="ms-2">Full Stack</span>
-                </a>
-            </li>
-          </ul>
           <li class="list-unstyled" ngxTippy="Si quieres saber más de mi..." tippyClassName="custom-class" [tippyProps]="{ placement: 'right' }">
-            <a [routerLink]="" class="nav-link d-flex align-items-center px-0 icon-link icon-link-hover" [ngClass]="{'mt-4': !sidebarVisible}">
+            <a href="#contact" class="nav-link d-flex align-items-center px-0 icon-link icon-link-hover" [ngClass]="{'mt-4': !sidebarVisible}">
               <i class="fs-5 fs-md-4 bi bi-mailbox-flag"></i>
               <span *ngIf="sidebarVisible" class="ms-2 pt-3">Contacta</span>
             </a>
