@@ -17,6 +17,11 @@
    background-size: cover;
 }
 
+.titles {
+  font-weight: 200;
+}
+
+
 .midParallax {
   height: 1000px;
   background-color: rgba(184, 184, 184, 0.132);
@@ -38,6 +43,10 @@
 
 .card-footer {
   background-color: transparent;
+}
+
+.card-title{
+  font-weight: 400;
 }
 
 /* FOR TABLET */

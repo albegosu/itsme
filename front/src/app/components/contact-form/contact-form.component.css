@@ -31,3 +31,7 @@ input.ng-valid.ng-touched{
 .bg_label {
   left: 10px;
 }
+
+.titles {
+  font-weight: 200;
+}

@@ -1,13 +1,13 @@
 <div class="h-100">
   <section class="p-5 d-flex flex-column justify-content-center align-items-center m-auto intro__title vh-100" id="top">
-    <h2>¡Hola, soy Alberto!</h2>
+    <h2 class="titles">¡Hola, soy Alberto!</h2>
     <p class="text-center">Diseñador industrial en plena reconversión al sector tecnológico como Full Stack Developer. Inquieto sin remedio, constantemente descubriendo nuevas cosas.
       <br>
       En esta reorientación busco conjugar en sincronía mis estudios con un matiz creativo, mi experiencia en la resolución de problemas y mejora continúa con una nueva oportunidad para aprender y crecer, ayudando y mejorando.</p>
   </section>
   <section class="row justify-content-center vh-100 p-5 parallax" id="aboutme">
     <br>
-    <h5 class="text-center m-auto text-white fs-2">¿Qué es lo último que he estudiado?</h5>
+    <h5 class="text-center m-auto text-white fs-2 titles" >¿Qué es lo último que he estudiado?</h5>
     <article class="card border-warning mb-3 bg-light cardContainer">
       <div class="card-header">UNIR</div>
       <div class="card-body text-warning">
@@ -26,7 +26,7 @@
     </article>
   </section>
   <section class="row justify-content-center vh-100 p-5 midParallax">
-    <h5 class="text-center m-auto fs-2">Pero...¿de dónde vengo?</h5>
+    <h5 class="text-center m-auto fs-2 titles">Pero...¿de dónde vengo?</h5>
     <article class="card border-warning mb-3 bg-light cardContainer cardContainerMidParallax">
       <div class="card-header">Escuela Superior de Arte de Asturias</div>
       <div class="card-body text-warning">
@@ -37,7 +37,7 @@
     </article>
   </section>
   <section class="row justify-content-center vh-100 p-5 parallax" id="parallaxJob">
-    <h5 class="text-center m-auto text-white fs-2 mb-4">He tenido grandes oportunidades profesionales...</h5>
+    <h5 class="text-center m-auto text-white fs-2 mb-4 titles">He tenido grandes oportunidades profesionales...</h5>
     <article class="card border-warning mb-3 bg-light cardContainer">
       <div class="card-header">Align Technology Inc.</div>
       <div class="card-body text-warning">
@@ -64,48 +64,50 @@
     </article>
   </section>
   <section class="p-5 d-flex flex-column justify-content-center align-items-center m-auto vh-100" id="proyectos">
-    <h3>Estos son algunos de mis proyectos</h3>
+    <h3 class="titles">Estos son algunos de mis proyectos.</h3>
     <div class="d-flex gap-2 mt-5">
-      <button class="btn btn-warning"><a class="nav-link" href="#front">Front</a></button>
-      <button class="btn btn-warning"><a class="nav-link" href="#fullstack">FullStack</a></button>
+      <button class="btn btn-outline-warning"><a class="nav-link" href="#onbuild">En curso</a></button>
+      <button class="btn btn-outline-warning"><a class="nav-link" href="#learning">Académicos</a></button>
     </div>
   </section>
-  <section class="row justify-content-center vh-100 p-5 parallax" id="front">
-    <h5 class="text-center m-auto text-white fs-2">He tenido grandes oportunidades profesionales...</h5>
-    <article class="card border-warning mb-3 bg-light cardContainer">
-      <div class="card-header">Align Technology Inc.</div>
+  <section class="row justify-content-center vh-100 p-5 parallax" id="onbuild">
+    <h5 class="text-center m-auto text-white fs-2 titles">Últimos proyectos en construcción</h5>
+    <article class="card col-6 mt-5 border-warning mb-3 bg-light">
+      <div class="card-header">Olimpia fisioterapia</div>
       <div class="card-body text-warning">
-        <h5 class="card-title text-body">Sr. Specialist CAD Designer</h5>
-        <p class="card-text text-body fs-6 mt-4">En Align tuve la oportunidad de gestionar un equipo de 50 personas en ambiente de alta producción, pudiendo evolucionar y promocionar en diferentes puestos. Organizando el trabajo basado en objetivos y medidores, dependiendo de la situación diaria de inventario. Solución de problemas, toma de decisiones y mejora continua.</p>
+        <h5 class="card-title text-body">Web para una clínica de nueva apertura</h5>
+        <img src="../../../assets/Captura de pantalla 2024-02-14 a las 12.50.13.png" class="img-fluid mt-3" alt="Screenshot web">
+        <p class="card-text text-body fs-6 mt-4">Web en construcción para una nueva apertura de clínicia de fisioterapia. Primeros dominios y hostings hechos. Trabajo sobre una base de Angular con Bootstrap y posteriormente agregaremos un Back con Node y Express
+          para generar una 'intraner' para los trabajadores con base de datos con MySQL para la gestión de los historiales de los pacientes y el calendario.
+        </p>
       </div>
-      <div class="card-footer">2018-22</div>
-    </article>
-    <article class="card border-warning mb-3 ms-2 bg-light cardContainer">
-      <div class="card-header">MyL Ideas</div>
-      <div class="card-body text-warning">
-        <h5 class="card-title text-body">Responsable de Producción</h5>
-        <p class="card-text text-body fs-6 mt-4">Control de proyectos artísticos enmarcados en el marketing y comunicación audiovisual. Gestión de un grupo de 15 personas, tiempos de producción y calidad del resultado. Búsqueda de nuevos procesos productivos y materiales.</p>
-      </div>
-      <div class="card-footer">2022-23</div>
+      <div class="card-footer">2024</div>
     </article>
   </section>
-  <section class="row justify-content-center vh-100 p-5 parallax" id="fullstack">
-    <h5 class="text-center m-auto text-white fs-2">He tenido grandes oportunidades profesionales...</h5>
-    <article class="card border-warning mb-3 bg-light cardContainer">
-      <div class="card-header">Align Technology Inc.</div>
+  <section class="row justify-content-center p-5 parallax vh-100" id="learning">
+    <h5 class="text-center m-auto text-white fs-2 titles">Proyectos académicos</h5>
+    <article class="card col-3 mt-5 border-warning mb-3 bg-light">
+      <div class="card-header">TFM UNIR</div>
       <div class="card-body text-warning">
-        <h5 class="card-title text-body">Sr. Specialist CAD Designer</h5>
+        <h5 class="card-title text-body">Proyecto final grupal Máster Full Stack UNIR</h5>
+        <img src="../../../assets/Captura de pantalla 2024-02-14 a las 13.15.28.png" class="img-fluid" alt="Screenshot web">
+        <p class="card-text text-body fs-6 mt-4">En el marco del Máster de Full Stack de UNIR para el TFM nos decidimos por la temática de la logística, una web para una empresa de transportes en las que se pueden gestionar envíos de salida y entrada según almacen,
+          dar de alta nuevos empleados y almacenes, utilizar distintos roles según puesto de trabajo y necesidades.
+          <br>
+          <br>
+          Trabajo en grupo en el que poner en práctica muchas destrezas transversales, no solo código y gestión de un trabajo a mayor escala.
+        </p>
+      </div>
+      <div class="card-footer">2023</div>
+    </article>
+    <article class="card col-3 ms-4 mt-5 border-warning mb-3 bg-light">
+      <div class="card-header">Figma</div>
+      <div class="card-body text-warning">
+        <h5 class="card-title text-body">Prototipos en Figma</h5>
+        <img src="../../../assets/Captura de pantalla 2024-02-14 a las 13.46.51.png" class="img-fluid" alt="Screenshot web">
         <p class="card-text text-body fs-6 mt-4">En Align tuve la oportunidad de gestionar un equipo de 50 personas en ambiente de alta producción, pudiendo evolucionar y promocionar en diferentes puestos. Organizando el trabajo basado en objetivos y medidores, dependiendo de la situación diaria de inventario. Solución de problemas, toma de decisiones y mejora continua.</p>
       </div>
-      <div class="card-footer">2018-22</div>
-    </article>
-    <article class="card border-warning mb-3 ms-2 bg-light cardContainer">
-      <div class="card-header">MyL Ideas</div>
-      <div class="card-body text-warning">
-        <h5 class="card-title text-body">Responsable de Producción</h5>
-        <p class="card-text text-body fs-6 mt-4">Control de proyectos artísticos enmarcados en el marketing y comunicación audiovisual. Gestión de un grupo de 15 personas, tiempos de producción y calidad del resultado. Búsqueda de nuevos procesos productivos y materiales.</p>
-      </div>
-      <div class="card-footer">2022-23</div>
+      <div class="card-footer">2023</div>
     </article>
   </section>
 </div>
