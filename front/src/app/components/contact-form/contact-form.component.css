@@ -1,37 +1,93 @@
-input.ng-invalid.ng-touched{
-  border-bottom: 3px solid tomato;
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-input.ng-valid.ng-touched{
-  border-bottom: 3px solid lightgreen;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.error{
-  color: tomato;
-  font-size: 12px;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.red-text {
-  color: tomato;
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
 }
 
-.form-control {
-  background-color: rgba(245, 245, 245, 0.635);
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
 }
 
-.form-control:focus {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
-  border-color: transparent;
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--text-color);
+  background-color: var(--hover-bg);
 }
 
-.form-floating label {
-  color: #888888;
+.form-input.error,
+.form-textarea.error {
+  border-color: #ff4444;
 }
 
-.bg_label {
-  left: 10px;
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
-.titles {
-  font-weight: 200;
+.error-message {
+  color: #ff4444;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.submit-button {
+  padding: 0.875rem 2rem;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.submit-button:hover:not(:disabled) {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .contact-form-container {
+    max-width: 100%;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
 }

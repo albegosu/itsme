@@ -1,34 +1,55 @@
-<h4 class="text-center titles">¡Contacta conmigo!</h4>
-<form class="container contact-form mt-3" style="max-width: 800px;" [formGroup]="contactForm" (ngSubmit)="sendEmail($event)">
-  <div class="row gap-2">
-    <div class="form-floating col-12 col-md-6">
-      <input type="text" class="form-control" id="user_name" placeholder="name@example.com" name="user_name" formControlName="user_name">
-      <label for="user_name" class="bg_label">Nombre</label>
-      <p class="error" *ngIf="checkControl('user_name', 'required')">Campo es requerido</p>
-      <p class="error" *ngIf="checkControl('user_name', 'minlength')">La longitud minima es de 3 caracteres</p>
-      <p class="error" *ngIf="checkControl('user_name', 'pattern')">No admite caracteres especiales</p>
+<div class="contact-form-container">
+  <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="sendEmail($event)">
+    <div class="form-group">
+      <label for="user_name">Name</label>
+      <input 
+        type="text" 
+        id="user_name" 
+        name="user_name" 
+        formControlName="user_name"
+        placeholder="Your name"
+        class="form-input"
+        [class.error]="checkControl('user_name', 'required') || checkControl('user_name', 'minlength') || checkControl('user_name', 'pattern')"
+      >
+      <p class="error-message" *ngIf="checkControl('user_name', 'required')">This field is required</p>
+      <p class="error-message" *ngIf="checkControl('user_name', 'minlength')">Minimum length is 4 characters</p>
+      <p class="error-message" *ngIf="checkControl('user_name', 'pattern')">No special characters allowed</p>
     </div>
-    <div class="col">
-      <div class="form-floating">
-        <input type="text" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
-        <label for="floatingInputGrid">Apellido</label>
-      </div>
+
+    <div class="form-group">
+      <label for="user_email">Email</label>
+      <input 
+        type="email" 
+        id="user_email" 
+        name="user_email" 
+        formControlName="user_email"
+        placeholder="your.email@example.com"
+        class="form-input"
+        [class.error]="checkControl('user_email', 'required') || checkControl('user_email', 'pattern') || checkControl('user_email', 'maxlength')"
+      >
+      <p class="error-message" *ngIf="checkControl('user_email', 'required')">Please enter a valid email</p>
+      <p class="error-message" *ngIf="checkControl('user_email', 'pattern')">Please enter a valid email address</p>
+      <p class="error-message" *ngIf="checkControl('user_email', 'maxlength')">Email must not exceed 45 characters</p>
     </div>
-    <div class="">
-      <div class="form-floating">
-        <input type="email" class="form-control" id="user_email" placeholder="name@example.com" name="user_email" formControlName="user_email">
-        <label for="user_email">Email</label>
-        <p class="error" *ngIf="checkControl('user_email', 'required')">Debe introducir un correo válido</p>
-        <p class="error" *ngIf="checkControl('user_email', 'pattern')">Complete correctamente su dirección de email</p>
-        <p class="error" *ngIf="checkControl('user_email', 'maxlength')">El email no debe superar los 45 caracteres</p>
-      </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea 
+        id="message" 
+        name="message" 
+        formControlName="message"
+        placeholder="Your message..."
+        class="form-textarea"
+        rows="6"
+      ></textarea>
     </div>
-    <div class="form-floating">
-      <textarea class="form-control" placeholder="Leave a comment here" id="message" style="height: 100px" name="message" formControlName="message"></textarea>
-      <label for="message" class="bg_label">Comentarios</label>
-    </div>
-    <div class="col align-self-end">
-      <button type="submit" class="btn btn-outline-light" [disabled]="contactForm.invalid">Enviar</button>
-    </div>
-  </div>
-</form>
+
+    <button 
+      type="submit" 
+      class="submit-button" 
+      [disabled]="contactForm.invalid"
+    >
+      Send
+    </button>
+  </form>
+</div>

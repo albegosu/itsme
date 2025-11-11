@@ -1,76 +1,224 @@
-.intro__title {
-  max-width: 30rem;
-  font-size: 1rem;
+.home-container {
+  width: 100%;
 }
 
-.parallax {
-   /* The image used */
-   background-image: url(../../../assets/5765758650_fe02097df5_o.jpg);
-
-   /* Set a specific height */
-   min-height: 500px;
-
-   /* Create the parallax scrolling effect */
-   background-attachment: fixed;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-}
-
-.titles {
-  font-weight: 200;
-}
- article {
-  --bs-bg-opacity: .75;
- }
-
-.midParallax {
-  height: 1000px;
-  background-color: rgba(184, 184, 184, 0.132);
-}
-
-.cardContainer {
-  max-width: 25rem;
-  max-height: 25rem;
-  --bs-bg-opacity: .75;
-}
-
-.cardContainerMidParallax {
-  --bs-bg-opacity: .5;
-}
-
-.card-header {
-  background-color: transparent;
-}
-
-.card-footer {
-  background-color: transparent;
-}
-
-.card-title{
-  font-weight: 400;
-}
-
-.sectionView {
+.hero-section {
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* FOR TABLET */
-@media screen and (max-width: 780px) {
-  #parallaxJob {
-    min-height: 1100px;
-  }
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-/* FOR MOBILE */
-@media screen and (max-width: 480px) {
-  .parallax {
-    min-height: 1500px;
+.hero-title {
+  font-size: 4rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.hero-location {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  opacity: 0.6;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+.about-section {
+  background-color: var(--section-bg);
+  transition: background-color 0.3s ease;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.content-item h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 60px;
+  top: 0;
+  bottom: -3rem;
+  width: 1px;
+  background-color: var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+.timeline-year {
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-width: 60px;
+  opacity: 0.6;
+}
+
+.timeline-content h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
+}
+
+.timeline-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+.projects-section {
+  padding: 6rem 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  background-color: var(--bg-color);
+}
+
+.project-card:hover {
+  border-color: var(--text-color);
+  transform: translateY(-2px);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.project-header h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.project-year {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.project-image {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  opacity: 1;
+}
+
+.contact-section {
+  background-color: var(--section-bg);
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
   }
-  #parallaxJob{
-    min-height: 1800px;
+
+  .hero-subtitle {
+    font-size: 1.1rem;
   }
-  .cardContainer {
-    max-height: 38rem;
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .timeline-item::before {
+    display: none;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
   }
 }

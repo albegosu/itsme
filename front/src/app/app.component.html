@@ -1,26 +1,24 @@
-<header class="p-0 m-0 fixed-top col-12" [ngClass]="{'col-md-4': sidebarVisible, 'headerWidth': !sidebarVisible}">
-  <app-sidebar class="h-100" (sidebarChange)="hiddenSidebar($event)"></app-sidebar>
-</header>
-<div class="col d-flex flex-column" [ngClass]="{'marginMain': sidebarVisible, 'noMargin': !sidebarVisible}">
-  <main class="h-100 d-flex flex-column justify-content-center align-items-center">
-    <app-home class="h-100"></app-home>
-    <!-- <h1>¡En creación!</h1>
-    <img src="../assets/construccion.png" alt="in works" class="img-fluid" height="300px">
-    <section>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet metus metus. Nunc sit amet felis eu risus imperdiet ornare a vitae urna. Nunc maximus felis ut felis sollicitudin gravida. Ut odio ex, ornare quis odio at, mattis pulvinar neque. Cras vitae urna non nisl venenatis lobortis. Ut eu porta erat. Nunc vel nisl ac quam aliquet varius.
-        <br>
-        Nam luctus orci sit amet eros laoreet ultricies. Cras urna massa, hendrerit pharetra tellus ac, posuere commodo augue. Sed eget nisi bibendum, elementum velit quis, mattis massa. Curabitur euismod nulla sit amet odio pulvinar efficitur. Sed et felis urna. Pellentesque ut nunc varius, luctus nunc ut, ullamcorper est. Ut urna nunc, ornare venenatis commodo nec, varius et erat. Maecenas turpis ante, sollicitudin nec porta vel, fringilla eget nisi. Nam suscipit felis at pellentesque pulvinar. Praesent placerat velit non orci convallis, sed feugiat ex ullamcorper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec posuere id mauris a tempor. Morbi sollicitudin, ipsum ac cursus volutpat, dolor lacus molestie lectus, sit amet accumsan tellus massa ut mauris.
-        <br>
-        Fusce sodales, erat eu auctor aliquam, lectus mauris tempor mauris, ut lacinia leo nisi nec massa. Proin fermentum, dui ut lacinia sollicitudin, quam mi gravida magna, sit amet feugiat est augue quis enim. Ut ullamcorper, nibh ullamcorper efficitur euismod, purus nibh suscipit dui, id sagittis velit magna quis lectus. Donec bibendum risus in congue placerat. Nulla molestie, ante dignissim pretium condimentum, risus nunc venenatis diam, eu finibus eros massa sollicitudin enim. Sed vel efficitur ante. Aenean id vulputate tellus, quis blandit tellus. Nunc sagittis a nulla at pretium. In gravida justo ac blandit placerat. Nulla at tellus facilisis, pellentesque sem ac, lacinia ipsum.
-        <br>
-        Ut eu nisl nisi. Fusce vitae nibh nulla. Etiam commodo urna id velit fermentum pulvinar. Praesent congue luctus quam posuere accumsan. Maecenas neque urna, iaculis at felis at, scelerisque lacinia leo. Donec pharetra, dui ut rutrum porttitor, quam dolor lobortis nulla, in cursus felis mi sit amet ligula. Vestibulum et pharetra elit, a luctus sem. Maecenas posuere placerat erat. Nunc sagittis tristique enim, et bibendum tellus sodales vitae. Fusce hendrerit, ipsum id vestibulum mattis, odio nulla blandit mauris, et accumsan mi libero sed lorem. Sed metus felis, ultricies eu ultrices ut, finibus egestas justo. Curabitur mollis nulla enim, maximus euismod ligula eleifend pellentesque.
-        <br>
-        Vestibulum ac mauris laoreet, eleifend enim a, gravida elit. Nam semper sem vel mattis pellentesque. In dapibus, velit at sodales luctus, nunc dolor auctor est, sit amet luctus lorem tortor eu lacus. Vestibulum in arcu sed diam lacinia tincidunt egestas vitae enim. Donec quis pharetra leo, sit amet rutrum ligula. Sed magna leo, porta eu tellus vel, feugiat tristique augue. Aenean pellentesque turpis eu metus vehicula, non imperdiet neque egestas. Vestibulum sodales auctor est ac feugiat. Aliquam ultrices justo eros, a placerat risus blandit nec.
-      </p>
-    TEST SIGN COMMIT
-    </section> -->
-    <app-contact-form id="contact" class="h-100 d-flex flex-column justify-content-center" style="min-height: 100vh;"></app-contact-form>
+<div class="app-container" [class.dark-theme]="isDarkTheme">
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-brand">
+        <a href="#top" class="nav-link">Alberto Glez.</a>
+      </div>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">Me</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="theme-toggle" (click)="toggleTheme()" [attr.aria-label]="isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'">
+          <i *ngIf="!isDarkTheme" class="bi bi-moon-fill"></i>
+          <i *ngIf="isDarkTheme" class="bi bi-sun-fill"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <app-home></app-home>
   </main>
-  <app-footer class="d-flex align-items-center justify-content-center pb-2 mt-auto pt-3"></app-footer>
+
+  <app-footer></app-footer>
 </div>

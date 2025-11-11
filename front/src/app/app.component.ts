@@ -1,16 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ThemeService } from './services/theme';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'itsme';
+  isDarkTheme = false;
 
-  sidebarVisible: boolean = true;
+  constructor(private themeService: ThemeService) {}
 
-  hiddenSidebar(isVisible: boolean): void {
-    this.sidebarVisible = isVisible;
+  ngOnInit(): void {
+    this.themeService.theme$.subscribe(isDark => {
+      this.isDarkTheme = isDark;
+    });
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
   }
 }
