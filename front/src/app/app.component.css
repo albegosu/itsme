@@ -64,9 +64,9 @@
 }
 
 .theme-toggle {
-  background: none;
+  background-color: var(--button-bg);
   border: 1px solid var(--border-color);
-  color: var(--text-color);
+  color: var(--button-text);
   padding: 0.5rem;
   border-radius: 50%;
   cursor: pointer;
@@ -80,9 +80,14 @@
 }
 
 .theme-toggle:hover {
-  opacity: 0.8;
+  opacity: 0.9;
   background-color: var(--hover-bg);
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.dark-theme .theme-toggle:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 12px var(--glow-color);
 }
 
 .theme-toggle i {

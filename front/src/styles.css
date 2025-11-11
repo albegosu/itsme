@@ -5,25 +5,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Light theme colors */
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --border-color: #e5e5e5;
-  --hover-bg: #f5f5f5;
-  --section-bg: #fafafa;
-  --accent-color: #000000;
-  --header-bg: rgba(255, 255, 255, 0.7);
+  /* Light theme colors - grey/light with whitesmoke accents */
+  --bg-color: #e8e8e8;
+  --text-color: #2a2a2a;
+  --text-secondary: #555555;
+  --border-color: #d0d0d0;
+  --hover-bg: #f0f0f0;
+  --section-bg: #e0e0e0;
+  --accent-color: #2a2a2a;
+  --header-bg: rgba(232, 232, 232, 0.7);
+  --card-bg: rgba(245, 245, 245, 0.9);
+  --button-bg: #f5f5f5;
+  --button-text: #2a2a2a;
+  --shadow-color: rgba(0, 0, 0, 0.15);
+  --glow-color: rgba(0, 0, 0, 0.08);
 }
 
 .dark-theme {
-  /* Dark theme colors */
-  --bg-color: #0a0a0a;
-  --text-color: #e5e5e5;
-  --border-color: #2a2a2a;
-  --hover-bg: #1a1a1a;
-  --section-bg: #111111;
-  --accent-color: #e5e5e5;
-  --header-bg: rgba(10, 10, 10, 0.7);
+  /* Dark theme colors - grey space/dark, not black */
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --border-color: #3a3a3a;
+  --hover-bg: #252525;
+  --section-bg: #222222;
+  --accent-color: #e0e0e0;
+  --header-bg: rgba(26, 26, 26, 0.8);
+  --card-bg: rgba(30, 30, 30, 0.7);
+  --button-bg: #2a2a2a;
+  --button-text: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --glow-color: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -110,6 +122,12 @@ p {
   font-weight: 400;
   margin-bottom: 3rem;
   opacity: 0.8;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.dark-theme .section-title {
+  opacity: 0.9;
+  color: var(--text-color);
 }
 
 /* Responsive */
