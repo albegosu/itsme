@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.assignee.login == 'albegosu'
     steps:
-      - uses: actions/add-to-project@v1
+      - uses: actions/add-to-project@v0.5.0
         with:
           project-url: https://github.com/users/albegosu/projects/2
           github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
