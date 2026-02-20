@@ -1,0 +1,15 @@
+name: Add assigned issues to personal project
+
+on:
+  issues:
+    types: [assigned]
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    if: github.event.assignee.login == 'albegosu'
+    steps:
+      - uses: actions/add-to-project@v1
+        with:
+          project-url: https://github.com/users/TU_USUARIO_GITHUB/projects/NUMERO_PROJECT
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
