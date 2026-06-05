@@ -41,4 +41,10 @@ const { isDark, toggleTheme } = useTheme()
   background-color: var(--color-card);
   color: var(--color-text);
 }
+
+@media (max-width: 640px) {
+  .theme-toggle-fixed {
+    display: none;
+  }
+}
 </style>
