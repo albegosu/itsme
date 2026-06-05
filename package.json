@@ -6,6 +6,7 @@
     "dev": "nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
+    "deploy": "npm run generate && firebase deploy",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "@nuxt/fonts": "^0.10.3",
+    "firebase-tools": "^15.19.1",
     "typescript": "^5.7.2",
     "vue-tsc": "^2.1.10"
   }
