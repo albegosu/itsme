@@ -5,7 +5,6 @@
 
     <!-- Sidebar: desktop only -->
     <AppSidebar
-      ref="sidebarRef"
       :is-mobile-open="false"
       @close="() => {}"
     />
@@ -18,7 +17,7 @@
     </header>
 
     <!-- Content -->
-    <div class="content-wrap" :class="{ 'sidebar-collapsed': sidebarCollapsed }">
+    <div class="content-wrap" :class="{ 'sidebar-collapsed': !isExpanded }">
       <NuxtPage />
       <AppFooter />
     </div>
@@ -30,11 +29,7 @@
 
 <script setup lang="ts">
 const { initTheme } = useTheme()
-const sidebarRef = ref<{ isExpanded: Ref<boolean> } | null>(null)
-
-const sidebarCollapsed = computed(() =>
-  sidebarRef.value ? !sidebarRef.value.isExpanded.value : false
-)
+const { isExpanded } = useSidebar()
 
 onMounted(() => {
   initTheme()

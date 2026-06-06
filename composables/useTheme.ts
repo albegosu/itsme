@@ -1,11 +1,10 @@
 export function useTheme() {
-  const isDark = useState<boolean>('theme-dark', () => false)
+  const isDark = useState<boolean>('theme-dark', () => true)
 
   function initTheme() {
     if (import.meta.client) {
       const stored = localStorage.getItem('theme')
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      isDark.value = stored ? stored === 'dark' : prefersDark
+      isDark.value = stored ? stored === 'dark' : true
       applyTheme()
     }
   }

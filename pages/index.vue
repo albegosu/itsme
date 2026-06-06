@@ -16,7 +16,7 @@
         </p>
         <p class="status" style="margin-top: 14px;">
           <span class="status__dot" />
-          Open to new opportunities
+          Working on new projects
         </p>
       </section>
 

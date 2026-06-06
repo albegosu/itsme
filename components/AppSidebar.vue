@@ -1,5 +1,8 @@
 <template>
-  <aside class="sidebar" :class="{ collapsed: !isExpanded, 'mobile-open': isMobileOpen }">
+  <aside
+    class="sidebar"
+    :class="{ 'is-expanded': isExpanded, 'mobile-open': isMobileOpen }"
+  >
     <!-- Header: photo + collapse toggle -->
     <div class="sidebar__header">
       <img src="/foto-alberto.jpg" alt="Alberto González" class="sidebar__photo" />
@@ -49,7 +52,7 @@
 
     <div class="sidebar__divider" />
 
-    <!-- Social: icons only, with tooltips when collapsed -->
+    <!-- Social -->
     <div class="sidebar__socials">
       <a href="https://www.linkedin.com/in/albegosu/" target="_blank" rel="noopener noreferrer"
          class="sidebar__social-link" aria-label="LinkedIn" data-tip="LinkedIn">
@@ -99,9 +102,7 @@
 defineProps<{ isMobileOpen: boolean }>()
 defineEmits<{ close: [] }>()
 
-const isExpanded = ref(true)
-function toggle() { isExpanded.value = !isExpanded.value }
-defineExpose({ isExpanded })
+const { isExpanded, toggle } = useSidebar()
 
 const navLinks = [
   { href: '#about',    label: 'About',    icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>` },
