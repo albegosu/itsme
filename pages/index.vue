@@ -21,7 +21,7 @@
       </section>
 
       <!-- Stack card -->
-      <section class="card" aria-label="Tech stack">
+      <section class="card card--span2" aria-label="Tech stack">
         <p class="card__label">Stack</p>
         <div class="tags" style="margin-top: 6px;">
           <span class="tag tag--accent">Nuxt</span>
@@ -36,6 +36,15 @@
       </section>
 
       <!-- ── Projects ──────────────────────────────────────────────────── -->
+      <div class="projects-strip">
+        <div class="projects-strip__chrome">
+          <p class="projects-strip__title">
+            Projects <small>← swipe →</small>
+          </p>
+          <p class="projects-strip__hint">← Swipe to browse projects</p>
+        </div>
+
+        <div ref="projectsStripRef" class="projects-strip__scroll">
       <!-- AI Elements Nuxt (featured) -->
       <article id="projects" class="card card--span2">
         <p class="card__label">Open Source</p>
@@ -197,6 +206,17 @@
           </a>
         </div>
       </article>
+        </div>
+
+        <div class="projects-strip__dots" aria-hidden="true">
+          <span
+            v-for="i in projectCount"
+            :key="i"
+            class="projects-strip__dot"
+            :class="{ 'projects-strip__dot--active': activeProject === i - 1 }"
+          />
+        </div>
+      </div>
 
       <!-- ── Work experience ───────────────────────────────────────────── -->
       <div id="work" class="section-label">Work Experience</div>
@@ -350,6 +370,24 @@
     </div>
   </main>
 </template>
+
+<script setup lang="ts">
+const projectsStripRef = ref<HTMLElement | null>(null)
+const activeProject = ref(0)
+const projectCount = 8
+
+onMounted(() => {
+  const strip = projectsStripRef.value
+  if (!strip) return
+
+  const onScroll = () => {
+    activeProject.value = Math.round(strip.scrollLeft / strip.offsetWidth)
+  }
+
+  strip.addEventListener('scroll', onScroll, { passive: true })
+  onBeforeUnmount(() => strip.removeEventListener('scroll', onScroll))
+})
+</script>
 
 <style scoped>
 .find-links {

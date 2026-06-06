@@ -355,6 +355,102 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-shrink: 0;
 }
 
+/* ─── Projects horizontal strip (mobile) ────────────────────────────────── */
+.projects-strip__chrome,
+.projects-strip__dots {
+  display: none;
+}
+
+@media (min-width: 641px) {
+  .projects-strip,
+  .projects-strip__scroll {
+    display: contents;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-strip {
+    grid-column: 1 / -1;
+    margin: 0 -12px;
+  }
+
+  .projects-strip__chrome {
+    display: block;
+  }
+
+  .projects-strip__title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-grey);
+    padding: 12px 12px 8px;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--t);
+  }
+
+  .projects-strip__title small {
+    font-size: 10px;
+    color: var(--color-accent);
+    opacity: 0.7;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .projects-strip__hint {
+    font-size: 11px;
+    color: var(--color-accent);
+    text-align: center;
+    padding: 6px 12px;
+    opacity: 0.8;
+  }
+
+  .projects-strip__scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px;
+    padding: 10px 12px 14px;
+    scrollbar-width: none;
+  }
+
+  .projects-strip__scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .projects-strip__scroll > .card {
+    min-width: 82vw;
+    max-width: 82vw;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    grid-column: unset;
+  }
+
+  .projects-strip__dots {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding-bottom: 8px;
+  }
+
+  .projects-strip__dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--color-border);
+    transition: background-color 0.15s ease;
+  }
+
+  .projects-strip__dot--active {
+    background: var(--color-accent);
+  }
+}
+
 /* ─── Section label row ─────────────────────────────────────────────────── */
 .section-label {
   grid-column: span 3;
@@ -554,6 +650,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 @media (max-width: 640px) {
   :root { --gap: 10px; }
+  body {
+    background-image: radial-gradient(circle, var(--color-dot) 1.5px, transparent 1.5px);
+    background-size: 18px 18px;
+  }
   .page-main { max-width: 100%; }
 
   /* Sidebar hidden entirely on mobile — pill nav takes over */
@@ -582,8 +682,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     padding-top: calc(72px + env(safe-area-inset-top));
   }
 
-  .cards-grid { grid-template-columns: 1fr; gap: 10px; }
-  .card--span2, .card--span3 { grid-column: span 1; }
-  .section-label { grid-column: span 1; }
+  .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .card--span2 { grid-column: span 2; }
+  .card--span3 { grid-column: span 2; }
+  .section-label { grid-column: span 2; }
   .footer { flex-direction: column; gap: 6px; text-align: center; padding: 14px; }
 }
