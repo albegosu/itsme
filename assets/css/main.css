@@ -415,7 +415,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     gap: 10px;
-    padding: 10px 12px 14px;
+    padding: 10px 0 14px;
+    scroll-padding-inline: 12px;
     scrollbar-width: none;
   }
 
@@ -429,6 +430,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     scroll-snap-align: start;
     flex-shrink: 0;
     grid-column: unset;
+    opacity: 0.45;
+    transition: opacity 0.25s ease;
+  }
+
+  .projects-strip__scroll > .card:first-child {
+    margin-left: 12px;
+  }
+
+  .projects-strip__scroll > .card:last-child {
+    margin-right: 12px;
+  }
+
+  .projects-strip__scroll > .card.card--active {
+    opacity: 1;
   }
 
   .projects-strip__dots {
@@ -644,7 +659,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 @media (max-width: 1100px) {
   .page-main { max-width: 60%; }
   .cards-grid { grid-template-columns: repeat(2, 1fr); }
-  .card--span3 { grid-column: span 2; }
+  .card--span3,
+  .card--span2-mobile { grid-column: span 2; }
   .section-label { grid-column: span 2; }
 }
 
@@ -683,7 +699,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   }
 
   .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .card--span2 { grid-column: span 2; }
+  .card--span2,
+  .card--span2-mobile { grid-column: span 2; }
   .card--span3 { grid-column: span 2; }
   .section-label { grid-column: span 2; }
   .footer { flex-direction: column; gap: 6px; text-align: center; padding: 14px; }

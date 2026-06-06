@@ -21,7 +21,7 @@
       </section>
 
       <!-- Stack card -->
-      <section class="card card--span2" aria-label="Tech stack">
+      <section class="card card--span2-mobile" aria-label="Tech stack">
         <p class="card__label">Stack</p>
         <div class="tags" style="margin-top: 6px;">
           <span class="tag tag--accent">Nuxt</span>
@@ -188,7 +188,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card card--span2-mobile">
         <p class="card__label">Masterclass</p>
         <p class="card__title">UNIR — How to Survive the KIT</p>
         <p class="card__body">
@@ -329,7 +329,7 @@
         <p class="card__body">Agile / Scrum, Vue 3, Java, Spring Boot, MySQL.</p>
       </article>
 
-      <article class="card">
+      <article class="card card--span2-mobile">
         <p class="card__label">2016</p>
         <p class="card__subtitle">Escuela Superior de Arte de Asturias</p>
         <p class="card__title">B.A. Product Design</p>
@@ -345,7 +345,7 @@
         <ContactForm />
       </section>
 
-      <aside class="card" aria-label="Find me online">
+      <aside class="card card--span2-mobile" aria-label="Find me online">
         <p class="card__label">Find me</p>
         <div class="find-links">
           <a href="https://www.linkedin.com/in/albegosu/" target="_blank" rel="noopener noreferrer" class="find-link">
@@ -380,12 +380,34 @@ onMounted(() => {
   const strip = projectsStripRef.value
   if (!strip) return
 
-  const onScroll = () => {
-    activeProject.value = Math.round(strip.scrollLeft / strip.offsetWidth)
+  const cards = strip.querySelectorAll<HTMLElement>('.card')
+
+  const updateActiveProject = () => {
+    const stripRect = strip.getBoundingClientRect()
+    const focusX = stripRect.left + stripRect.width * 0.35
+
+    let closest = 0
+    let minDist = Infinity
+
+    cards.forEach((card, i) => {
+      const rect = card.getBoundingClientRect()
+      const cardFocus = rect.left + rect.width * 0.15
+      const dist = Math.abs(focusX - cardFocus)
+      if (dist < minDist) {
+        minDist = dist
+        closest = i
+      }
+    })
+
+    activeProject.value = closest
+    cards.forEach((card, i) => {
+      card.classList.toggle('card--active', i === closest)
+    })
   }
 
-  strip.addEventListener('scroll', onScroll, { passive: true })
-  onBeforeUnmount(() => strip.removeEventListener('scroll', onScroll))
+  strip.addEventListener('scroll', updateActiveProject, { passive: true })
+  updateActiveProject()
+  onBeforeUnmount(() => strip.removeEventListener('scroll', updateActiveProject))
 })
 </script>
 
