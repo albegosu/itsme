@@ -1,7 +1,7 @@
 const siteUrl = 'https://albertoglez.es'
 const title = 'Alberto Glez — Product Engineer'
 const description =
-  'Product Engineer con background en diseño industrial. Construyo interfaces donde la lógica y la forma tienen el mismo peso.'
+  'Product engineer with an industrial design background. I build interfaces where logic and form carry equal weight.'
 const ogImage = `${siteUrl}/og-image.png`
 
 export default defineNuxtConfig({
@@ -28,6 +28,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      htmlAttrs: { lang: 'en' },
       title,
       meta: [
         { charset: 'utf-8' },
@@ -39,7 +40,7 @@ export default defineNuxtConfig({
         { property: 'og:description', content: description },
         { property: 'og:image', content: ogImage },
         { property: 'og:image:alt', content: title },
-        { property: 'og:locale', content: 'es_ES' },
+        { property: 'og:locale', content: 'en_US' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: title },
         { name: 'twitter:description', content: description },

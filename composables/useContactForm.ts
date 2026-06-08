@@ -29,13 +29,13 @@ export function useContactForm() {
     errors.message = undefined
 
     if (!form.user_name || form.user_name.length < 2) {
-      errors.user_name = 'El nombre debe tener al menos 2 caracteres.'
+      errors.user_name = 'Name must be at least 2 characters.'
     }
     if (!form.user_email || !EMAIL_REGEX.test(form.user_email)) {
-      errors.user_email = 'Introduce un email válido.'
+      errors.user_email = 'Enter a valid email address.'
     }
     if (!form.message || form.message.length < 5) {
-      errors.message = 'El mensaje debe tener al menos 5 caracteres.'
+      errors.message = 'Message must be at least 5 characters.'
     }
 
     return !errors.user_name && !errors.user_email && !errors.message
