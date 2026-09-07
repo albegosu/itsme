@@ -19,7 +19,7 @@
     <!-- Content -->
     <div class="content-wrap" :class="{ 'sidebar-collapsed': !isExpanded }">
       <NuxtPage />
-      <AppFooter />
+      <AppFooter v-if="!isNoteDetail" />
     </div>
 
     <!-- Mobile pill nav: mobile only -->
@@ -30,6 +30,8 @@
 <script setup lang="ts">
 const { initTheme } = useTheme()
 const { isExpanded } = useSidebar()
+const route = useRoute()
+const isNoteDetail = computed(() => route.name === 'notes-slug')
 
 onMounted(() => {
   initTheme()

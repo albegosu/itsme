@@ -252,13 +252,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   overflow: hidden;
   max-width: 0;
   opacity: 0;
-  transition: opacity 0.12s ease, max-width 0.2s ease;
+  transition: opacity 0.08s ease, max-width 0.08s ease 0s;
 }
 
 .sidebar.is-expanded .nav-label {
-  max-width: 100px;
+  max-width: 120px;
   opacity: 1;
-  transition: opacity 0.2s ease 0.18s, max-width 0.3s ease 0.08s;
+  transition: opacity 0.15s ease 0.22s, max-width 0.15s ease 0.2s;
 }
 
 /* ─── Sidebar social (icons only) ───────────────────────────────────────── */

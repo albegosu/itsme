@@ -14,6 +14,7 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/fonts'],
 
+
   fonts: {
     families: [
       {
@@ -50,6 +51,7 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'canonical', href: siteUrl },
+        { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/dist/tabler-icons.min.css' },
       ],
       script: [
         {
