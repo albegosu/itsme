@@ -285,6 +285,11 @@
               <p class="role__title">Product Engineer</p>
               <p class="role__period">May 2026 — present</p>
             </div>
+            <p class="card__body">
+              I own the product surface: how it looks, how it behaves, and the
+              systems behind it. Design and engineering in the same loop — from
+              the wireframe to what ships.
+            </p>
             <div class="tags">
               <span class="tag tag--accent">Nuxt</span>
               <span class="tag tag--accent">Vue 3</span>
@@ -418,10 +423,6 @@
           <a href="https://albegosu.github.io/albegosu/" target="_blank" rel="noopener noreferrer" class="find-link">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             <span>Notes & Guides</span>
-          </a>
-          <a href="https://albegosu.notion.site/Proyectos-0811234cd8fb457c82016d5a9b6ab8a8" target="_blank" rel="noopener noreferrer" class="find-link">
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor"><path d="M3.258 3.117c.374.304.515.28.977.249l6.607-.397c.14 0 .024-.14-.023-.163L9.898.928c-.21-.163-.49-.35-1.028-.304L2.22 1.02c-.233.023-.28.14-.186.233zm.396 1.52v6.952c0 .374.187.514.608.49l7.262-.42c.42-.023.467-.28.467-.584V3.162c0-.303-.117-.467-.374-.443L3.888 4.17c-.28.024-.374.164-.374.467zm7.168.373c.047.21 0 .42-.21.444l-.35.07v5.132c-.304.163-.584.257-.817.257-.374 0-.468-.117-.748-.467l-2.288-3.593v3.476l.608.14s0 .42-.584.42l-1.611.093c-.047-.093 0-.327.163-.373l.42-.117V5.927L5.59 5.88c-.047-.21.07-.513.397-.537l1.728-.117 2.39 3.8V5.717l-.608-.07c-.047-.257.14-.443.373-.467zM.968.518l6.655-.49c.817-.07 1.028-.023 1.541.35l2.125 1.493c.35.257.467.327.467.607v8.19c0 .513-.187.817-.84.863l-7.729.467c-.49.023-.724-.047-.981-.374L.736 9.37C.457 9 .34 8.75.34 8.42V1.125C.34.89.527.565.968.518z"/></svg>
-            <span>Notion</span>
           </a>
         </div>
       </aside>

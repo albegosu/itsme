@@ -1,5 +1,5 @@
 <template>
-  <main class="page-main">
+  <main class="page-main page-main--log">
     <div class="bl-wrap">
 
       <header class="bl-header">
@@ -170,6 +170,8 @@ useHead({ title: 'Build log — Alberto Glez' })
 <style scoped>
 .bl-wrap {
   max-width: 680px;
+  width: 100%;
+  margin-inline: auto;
   padding: 48px 24px 80px;
 }
 

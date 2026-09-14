@@ -311,11 +311,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 16px 20px 0;
 }
 
+.page-main--log {
+  max-width: 720px;
+}
+
 /* ─── Card grid ──────────────────────────────────────────────────────────── */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--gap);
+  align-items: stretch;
 }
 
 /* ─── Card ───────────────────────────────────────────────────────────────── */
@@ -324,6 +329,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: var(--radius-card);
   padding: 18px;
   transition: var(--t);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .card--span2 { grid-column: span 2; }
 .card--span3 { grid-column: span 3; }
@@ -433,6 +441,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    align-items: stretch;
     gap: 10px;
     padding: 10px 0 14px;
     scroll-padding-inline: 12px;
@@ -504,14 +513,22 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .tag--accent { background: color-mix(in srgb, var(--color-accent) 12%, transparent); color: var(--color-accent); }
 .tag--wip { background: color-mix(in srgb, hsl(38, 92%, 55%) 12%, transparent); color: hsl(38, 75%, 42%); }
 
-.card__img { width: 100%; border-radius: 10px; margin-bottom: 12px; object-fit: cover; aspect-ratio: 16 / 9; }
+.card__img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  filter: grayscale(1) contrast(0.95);
+}
 
 /* ─── Card links row ─────────────────────────────────────────────────────── */
 .card__links {
   display: flex;
   gap: 12px;
-  margin-top: 12px;
-  padding-top: 10px;
+  margin-top: auto;
+  padding-top: 12px;
+  flex-shrink: 0;
   border-top: 1px solid var(--color-border);
   transition: var(--t);
 }
@@ -677,6 +694,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* 1100px accounts for sidebar (240px) + useful content area (~860px) */
 @media (max-width: 1100px) {
   .page-main { max-width: 60%; }
+  .page-main--log { max-width: 720px; }
   .cards-grid { grid-template-columns: repeat(2, 1fr); }
   .card--span3,
   .card--span2-mobile { grid-column: span 2; }

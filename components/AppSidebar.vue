@@ -78,10 +78,10 @@
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/>
         </svg>
       </a>
-      <a href="https://albegosu.notion.site/Proyectos-0811234cd8fb457c82016d5a9b6ab8a8" target="_blank" rel="noopener noreferrer"
-         class="sidebar__social-link" aria-label="Notion" data-tip="Notion">
-        <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor">
-          <path d="M3.258 3.117c.374.304.515.28.977.249l6.607-.397c.14 0 .024-.14-.023-.163L9.898.928c-.21-.163-.49-.35-1.028-.304L2.22 1.02c-.233.023-.28.14-.186.233zm.396 1.52v6.952c0 .374.187.514.608.49l7.262-.42c.42-.023.467-.28.467-.584V3.162c0-.303-.117-.467-.374-.443L3.888 4.17c-.28.024-.374.164-.374.467zm7.168.373c.047.21 0 .42-.21.444l-.35.07v5.132c-.304.163-.584.257-.817.257-.374 0-.468-.117-.748-.467l-2.288-3.593v3.476l.608.14s0 .42-.584.42l-1.611.093c-.047-.093 0-.327.163-.373l.42-.117V5.927L5.59 5.88c-.047-.21.07-.513.397-.537l1.728-.117 2.39 3.8V5.717l-.608-.07c-.047-.257.14-.443.373-.467zM.968.518l6.655-.49c.817-.07 1.028-.023 1.541.35l2.125 1.493c.35.257.467.327.467.607v8.19c0 .513-.187.817-.84.863l-7.729.467c-.49.023-.724-.047-.981-.374L.736 9.37C.457 9 .34 8.75.34 8.42V1.125C.34.89.527.565.968.518z"/>
+      <a :href="githubProjectUrl" target="_blank" rel="noopener noreferrer"
+         class="sidebar__social-link" aria-label="Public roadmap" data-tip="Roadmap">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/>
         </svg>
       </a>
     </div>
@@ -109,12 +109,13 @@ defineProps<{ isMobileOpen: boolean }>()
 defineEmits<{ close: [] }>()
 
 const { isExpanded, toggle } = useSidebar()
+const { public: { githubProjectUrl } } = useRuntimeConfig()
 
 const navLinks = [
-  { href: '/#about',    label: 'About',    icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>` },
-  { href: '/#work',     label: 'Work',     icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>` },
-  { href: '/#projects', label: 'Projects', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>` },
-  { href: '/#contact',  label: 'Contact',  icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>` },
-  { href: '/notes',    label: 'Build log', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>` },
+  { href: '/#about',    label: 'About',     icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>` },
+  { href: '/#work',     label: 'Work',      icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>` },
+  { href: '/#projects', label: 'Projects',  icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>` },
+  { href: '/notes',     label: 'Build log', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>` },
+  { href: '/#contact',  label: 'Contact',   icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>` },
 ]
 </script>
