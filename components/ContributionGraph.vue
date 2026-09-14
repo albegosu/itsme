@@ -20,11 +20,15 @@
     </div>
 
     <div v-if="pending" class="contrib__scroll" aria-hidden="true">
-      <div class="contrib__weekdays">
-        <span /><span>Mon</span><span /><span>Wed</span><span /><span>Fri</span><span />
-      </div>
-      <div class="contrib__grid contrib__grid--skeleton">
-        <span v-for="n in 371" :key="n" class="contrib__cell contrib__cell--l0" />
+      <div class="contrib__plot">
+        <div class="contrib__body">
+          <div class="contrib__weekdays">
+            <span /><span>Mon</span><span /><span>Wed</span><span /><span>Fri</span><span />
+          </div>
+          <div class="contrib__grid contrib__grid--skeleton">
+            <span v-for="n in 371" :key="n" class="contrib__cell contrib__cell--l0" />
+          </div>
+        </div>
       </div>
     </div>
 
@@ -239,9 +243,10 @@ function hideTip() {
 }
 
 .contrib__plot {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  min-width: 100%;
+  width: max-content;
+  margin-inline: auto;
 }
 
 .contrib__months {

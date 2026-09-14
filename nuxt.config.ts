@@ -29,7 +29,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      githubProjectUrl: 'https://github.com/users/albegosu/projects/5',
+      githubProjectUrl: 'https://github.com/users/albegosu/projects/5/views/2',
     },
   },
 
