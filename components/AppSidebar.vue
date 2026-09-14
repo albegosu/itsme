@@ -1,7 +1,11 @@
 <template>
   <aside
     class="sidebar"
-    :class="{ 'is-expanded': isExpanded, 'mobile-open': isMobileOpen }"
+    :class="{
+      'is-expanded': isExpanded,
+      'is-animating': isAnimating,
+      'mobile-open': isMobileOpen,
+    }"
   >
     <!-- Header: photo + collapse toggle -->
     <div class="sidebar__header">
@@ -12,10 +16,7 @@
         @click="toggle"
         :aria-label="isExpanded ? 'Collapse sidebar' : 'Expand sidebar'"
       >
-        <svg v-if="isExpanded" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-        <svg v-else width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <svg class="sidebar__chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <polyline points="9 18 15 12 9 6" />
         </svg>
       </button>
@@ -23,14 +24,16 @@
 
     <!-- Name / role / location -->
     <div class="sidebar__text-group">
-      <p class="sidebar__name">Alberto Glez.</p>
-      <p class="sidebar__role">Product Engineer</p>
-      <p class="sidebar__location">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
-        </svg>
-        Gijón, Asturias
-      </p>
+      <div class="sidebar__text-inner">
+        <p class="sidebar__name">Alberto Glez.</p>
+        <p class="sidebar__role">Product Engineer</p>
+        <p class="sidebar__location">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
+          </svg>
+          Gijón, Asturias
+        </p>
+      </div>
     </div>
 
     <div class="sidebar__divider" />
@@ -108,11 +111,11 @@
 defineProps<{ isMobileOpen: boolean }>()
 defineEmits<{ close: [] }>()
 
-const { isExpanded, toggle } = useSidebar()
+const { isExpanded, isAnimating, toggle } = useSidebar()
 const { public: { githubProjectUrl } } = useRuntimeConfig()
 
 const navLinks = [
-  { href: '/#about',    label: 'About',     icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>` },
+  { href: '/',          label: 'About',     icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>` },
   { href: '/#work',     label: 'Work',      icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>` },
   { href: '/#projects', label: 'Projects',  icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>` },
   { href: '/notes',     label: 'Build log', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>` },
