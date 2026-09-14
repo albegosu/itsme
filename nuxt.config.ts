@@ -27,6 +27,12 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  runtimeConfig: {
+    public: {
+      githubProjectUrl: 'https://github.com/users/albegosu/projects/5',
+    },
+  },
+
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
