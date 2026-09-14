@@ -16,7 +16,7 @@
         </p>
         <p class="status" style="margin-top: 14px;">
           <span class="status__dot" />
-          Working on new projects
+          Building in public
         </p>
       </section>
 
@@ -33,6 +33,17 @@
           <span class="tag tag--accent">AI</span>
           <span class="tag tag--accent">RAG</span>
         </div>
+      </section>
+
+      <!-- ── GitHub activity ───────────────────────────────────────────── -->
+      <section id="github" class="card card--span3" aria-label="GitHub activity">
+        <ClientOnly>
+          <ContributionGraph />
+          <template #fallback>
+            <p class="card__label">GitHub</p>
+            <p class="card__title">Last 12 months</p>
+          </template>
+        </ClientOnly>
       </section>
 
       <!-- ── Projects ──────────────────────────────────────────────────── -->
@@ -115,21 +126,65 @@
         </div>
       </article>
 
-      <!-- Hypar RAG -->
+      <!-- Hypar -->
       <article class="card">
-        <p class="card__label">In progress</p>
-        <p class="card__title">Hypar · RAG from scratch</p>
+        <p class="card__label">Lab</p>
+        <p class="card__title">Hypar</p>
         <p class="card__body">
-          Step-by-step documentation for building RAG systems from zero. Practical,
-          no shortcuts.
+          AI interaction research lab. Embryos — living units of knowledge — and an
+          agent that collaborates by asking one hard question at a time.
         </p>
         <div class="tags">
           <span class="tag tag--wip">WIP</span>
-          <span class="tag">RAG</span>
-          <span class="tag">Open Source</span>
+          <span class="tag tag--accent">Nuxt</span>
+          <span class="tag">AI</span>
         </div>
         <div class="card__links">
-          <a href="https://github.com/albegosu/from-zero-rag" target="_blank" rel="noopener noreferrer" class="card__link">
+          <a href="https://github.com/albegosu/hypar" target="_blank" rel="noopener noreferrer" class="card__link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+          <a href="https://albegosu.github.io/hypar/" target="_blank" rel="noopener noreferrer" class="card__link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Docs
+          </a>
+        </div>
+      </article>
+
+      <!-- Honest Arch Diagrams -->
+      <article class="card">
+        <p class="card__label">Open Source</p>
+        <p class="card__title">Honest Arch Diagrams</p>
+        <p class="card__body">
+          Agent skill for request-path diagrams that separate verified hops from
+          inferred companions — and never invent topology.
+        </p>
+        <div class="tags">
+          <span class="tag">Open Source</span>
+          <span class="tag">Agent Skill</span>
+        </div>
+        <div class="card__links">
+          <a href="https://github.com/albegosu/honest-arch-diagrams" target="_blank" rel="noopener noreferrer" class="card__link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+        </div>
+      </article>
+
+      <!-- VPN Switcher -->
+      <article class="card">
+        <p class="card__label">macOS</p>
+        <p class="card__title">VPN Switcher</p>
+        <p class="card__body">
+          One menu bar for every client’s VPN — Tailscale, WireGuard, native, or
+          any CLI — from a single YAML file.
+        </p>
+        <div class="tags">
+          <span class="tag">macOS</span>
+          <span class="tag">Swift</span>
+        </div>
+        <div class="card__links">
+          <a href="https://github.com/albegosu/vpn-switcher" target="_blank" rel="noopener noreferrer" class="card__link">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
           </a>
@@ -356,6 +411,10 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             <span>GitHub</span>
           </a>
+          <a :href="githubProjectUrl" target="_blank" rel="noopener noreferrer" class="find-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+            <span>Public roadmap</span>
+          </a>
           <a href="https://albegosu.github.io/albegosu/" target="_blank" rel="noopener noreferrer" class="find-link">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             <span>Notes & Guides</span>
@@ -372,9 +431,10 @@
 </template>
 
 <script setup lang="ts">
+const { public: { githubProjectUrl } } = useRuntimeConfig()
 const projectsStripRef = ref<HTMLElement | null>(null)
 const activeProject = ref(0)
-const projectCount = 8
+const projectCount = 10
 
 onMounted(() => {
   const strip = projectsStripRef.value
@@ -412,6 +472,10 @@ onMounted(() => {
 </script>
 
 <style scoped>
+#github {
+  min-width: 0;
+}
+
 .find-links {
   display: flex;
   flex-direction: column;
