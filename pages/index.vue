@@ -171,6 +171,24 @@
         </div>
       </article>
 
+      <!-- Olimpia Fisioterapia (featured client work) -->
+      <article class="card card--span2 card--media">
+        <img src="/olimpia.png" alt="Olimpia Fisioterapia website" class="card__img" />
+        <div class="card__media-body">
+          <p class="card__label">Client work · 2024</p>
+          <p class="card__title">Olimpia Fisioterapia</p>
+          <p class="card__body">
+            Website for a new physiotherapy clinic. Angular frontend; Node/Express + MySQL
+            backend for patient records and appointment scheduling.
+          </p>
+          <div class="tags">
+            <span class="tag">Angular</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+      </article>
+
       <!-- VPN Switcher -->
       <article class="card">
         <p class="card__label">macOS</p>
@@ -188,22 +206,6 @@
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
           </a>
-        </div>
-      </article>
-
-      <!-- Olimpia Fisioterapia -->
-      <article class="card">
-        <p class="card__label">Client work · 2024</p>
-        <img src="/olimpia.png" alt="Olimpia Fisioterapia website" class="card__img" />
-        <p class="card__title">Olimpia Fisioterapia</p>
-        <p class="card__body">
-          Website for a new physiotherapy clinic. Angular frontend; Node/Express + MySQL
-          backend for patient records and appointment scheduling.
-        </p>
-        <div class="tags">
-          <span class="tag">Angular</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">MySQL</span>
         </div>
       </article>
 
