@@ -178,13 +178,12 @@
           <p class="card__label">Client work · 2024</p>
           <p class="card__title">Olimpia Fisioterapia</p>
           <p class="card__body">
-            Website for a new physiotherapy clinic. Angular frontend; Node/Express + MySQL
-            backend for patient records and appointment scheduling.
+            Website for a physiotherapy clinic in Gijón, redesigned and rebuilt in Nuxt.
           </p>
           <div class="tags">
-            <span class="tag">Angular</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">MySQL</span>
+            <span class="tag tag--accent">Nuxt</span>
+            <span class="tag tag--accent">Vue 3</span>
+            <span class="tag">Client work</span>
           </div>
         </div>
       </article>
