@@ -615,6 +615,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   filter: grayscale(1) contrast(0.95);
 }
 
+/* Featured card: screenshot beside the text on wide layouts */
+.card--media {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.card--media .card__img { margin-bottom: 0; aspect-ratio: 16 / 10; filter: none; }
+.card__media-body { display: flex; flex-direction: column; align-self: stretch; }
+
+@media (max-width: 1100px) {
+  .card--media { display: flex; }
+  .card--media .card__img { margin-bottom: 12px; }
+}
+
 /* ─── Card links row ─────────────────────────────────────────────────────── */
 .card__links {
   display: flex;
