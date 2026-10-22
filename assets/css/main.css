@@ -622,8 +622,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   gap: 16px;
   align-items: start;
 }
-.card--media .card__img { margin-bottom: 0; aspect-ratio: 16 / 10; transition: filter 0.3s ease; }
-.card--media:hover .card__img { filter: none; }
+.card--media .card__img { margin-bottom: 0; aspect-ratio: 16 / 10; filter: none; }
 
 @media (max-width: 1100px) {
   .card--media { display: flex; }
