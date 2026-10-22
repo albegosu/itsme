@@ -623,6 +623,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   align-items: start;
 }
 .card--media .card__img { margin-bottom: 0; aspect-ratio: 16 / 10; filter: none; }
+.card__media-body { display: flex; flex-direction: column; align-self: stretch; }
 
 @media (max-width: 1100px) {
   .card--media { display: flex; }

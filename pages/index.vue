@@ -175,7 +175,7 @@
       <article class="card card--span2 card--media">
         <img src="/olimpia.png" alt="Olimpia Fisioterapia website" class="card__img" />
         <div class="card__media-body">
-          <p class="card__label">Client work · 2024</p>
+          <p class="card__label">Client work · 2024 · Updated 2026</p>
           <p class="card__title">Olimpia Fisioterapia</p>
           <p class="card__body">
             Website for a physiotherapy clinic in Gijón, redesigned and rebuilt in Nuxt.
@@ -184,6 +184,12 @@
             <span class="tag tag--accent">Nuxt</span>
             <span class="tag tag--accent">Vue 3</span>
             <span class="tag">Client work</span>
+          </div>
+          <div class="card__links">
+            <a href="https://olimpiafisioterapia.es/" target="_blank" rel="noopener noreferrer" class="card__link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Visit
+            </a>
           </div>
         </div>
       </article>
