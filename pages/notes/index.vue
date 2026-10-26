@@ -3,158 +3,36 @@
     <div class="bl-wrap">
 
       <header class="bl-header">
-        <p class="section-label">Build log</p>
+        <p class="section-label">{{ entryCount }} entries</p>
         <h1 class="bl-title">Build log</h1>
         <p class="bl-sub">Things I've learned building products, tools, and infra — written down so I don't forget them.</p>
       </header>
 
-      <!-- AI & LLMs -->
-      <section class="bl-section">
-        <p class="section-label">AI & LLMs</p>
+      <section v-for="section in noteSections" :key="section.label" class="bl-section">
+        <p class="section-label">{{ section.label }}</p>
 
-        <a href="/notes/cursor-token-efficiency" class="idx-card">
+        <a
+          v-for="note in byNewest(section.notes)"
+          :key="note.slug ?? note.href"
+          :href="note.slug ? `/notes/${note.slug}` : note.href"
+          :target="note.href ? '_blank' : undefined"
+          :rel="note.href ? 'noopener noreferrer' : undefined"
+          class="idx-card"
+        >
           <div class="idx-card-meta">
-            <i class="ti ti-cpu card-icon" />
-            <span class="idx-card-title">Cursor — Model Selection & Token Efficiency</span>
+            <i class="ti card-icon" :class="note.icon" />
+            <span class="idx-card-title">{{ note.title }}</span>
+            <time class="idx-card-date" :datetime="note.date">{{ formatNoteDate(note.date) }}</time>
           </div>
-          <p class="idx-card-desc">Key takeaways from two Cursor field engineering sessions. Covers the planning-first workflow, model routing, context hygiene, and caching traps.</p>
+          <p class="idx-card-desc">{{ note.description }}</p>
           <div class="idx-card-footer">
-            <span class="badge badge-teal">AI</span>
-            <span class="badge badge-gray">LLMs</span>
-            <span class="arrow">›</span>
-          </div>
-        </a>
-      </section>
-
-      <!-- AI Agents -->
-      <section class="bl-section">
-        <p class="section-label">AI Agents</p>
-
-        <a href="/notes/postgres-agent-persistence" class="idx-card">
-          <div class="idx-card-meta">
-            <i class="ti ti-database card-icon" />
-            <span class="idx-card-title">Postgres Conversation Persistence in an Agent</span>
-          </div>
-          <p class="idx-card-desc">Migrating from JSON-on-pod to Postgres without changing the agent interface. The detail you always forget: indexes come after columns.</p>
-          <div class="idx-card-footer">
-            <span class="badge badge-teal">AI</span>
-            <span class="badge badge-green">Postgres</span>
-            <span class="arrow">›</span>
-          </div>
-        </a>
-
-        <a href="/notes/oauth2-proxy-agent-identity" class="idx-card">
-          <div class="idx-card-meta">
-            <i class="ti ti-lock card-icon" />
-            <span class="idx-card-title">oauth2-proxy + Agent Identity</span>
-          </div>
-          <p class="idx-card-desc">The real version: identity headers the agent reads to know who's talking, the pending NetworkPolicy, and the manual chart bug that broke everything.</p>
-          <div class="idx-card-footer">
-            <span class="badge badge-blue">Kubernetes</span>
-            <span class="badge badge-teal">AI</span>
-            <span class="arrow">›</span>
-          </div>
-        </a>
-
-<a href="/notes/eks-service-onboarding" class="idx-card">
-          <div class="idx-card-meta">
-            <i class="ti ti-route card-icon" />
-            <span class="idx-card-title">Onboarding a Service to EKS with an Agent</span>
-          </div>
-          <p class="idx-card-desc">The failed goal, what partially worked, and what's left. An honest write-up of trying to automate microservice onboarding with a Claude agent.</p>
-          <div class="idx-card-footer">
-            <span class="badge badge-teal">AI</span>
-            <span class="badge badge-blue">Kubernetes</span>
-            <span class="arrow">›</span>
-          </div>
-        </a>
-      </section>
-
-      <!-- Products & Tools -->
-      <section class="bl-section">
-        <p class="section-label">Products & Tools</p>
-
-        <a href="/notes/ai-elements-nuxt" class="idx-card">
-          <div class="idx-card-meta">
-            <i class="ti ti-sparkles card-icon" />
-            <span class="idx-card-title">AI Elements Nuxt — Components</span>
-          </div>
-          <p class="idx-card-desc">Headless Vue components for AI-native apps in Nuxt. Chat, tools, code blocks, voice, and workflow UIs that plug into your own design system.</p>
-          <div class="idx-card-footer">
-            <span class="badge badge-purple">Vue</span>
-            <span class="badge badge-teal">AI</span>
-            <span class="arrow">›</span>
-          </div>
-        </a>
-
-        <a href="/notes/micrographic-skill" class="idx-card">
-          <div class="idx-card-meta">
-            <i class="ti ti-chart-dots-3 card-icon" />
-            <span class="idx-card-title">Micrographic Skill — Product</span>
-          </div>
-          <p class="idx-card-desc">My design-tool product for AI coding agents. It installs a micrographic UI system so generated interfaces look dense, technical, and schematic by default.</p>
-          <div class="idx-card-footer">
-            <span class="badge badge-amber">Design</span>
-            <span class="badge badge-teal">AI</span>
-            <span class="arrow">›</span>
-          </div>
-        </a>
-
-        <a href="https://github.com/albegosu/vpn-switcher" target="_blank" rel="noopener noreferrer" class="idx-card">
-          <div class="idx-card-meta">
-            <i class="ti ti-shield-lock card-icon" />
-            <span class="idx-card-title">VPN Switcher — macOS App</span>
-          </div>
-          <p class="idx-card-desc">Menu-bar app for macOS that switches VPN profiles with a single click. Built for devs who juggle multiple envs and can't afford to context-switch on network configs.</p>
-          <div class="idx-card-footer">
-            <span class="badge badge-gray">macOS</span>
-            <span class="badge badge-blue">Swift</span>
-            <span class="arrow">›</span>
-          </div>
-        </a>
-
-      </section>
-
-      <!-- Infra & Platform -->
-      <section class="bl-section">
-        <p class="section-label">Infra & Platform</p>
-
-        <a href="/notes/ingress-nginx-to-envoy-gateway" class="idx-card">
-          <div class="idx-card-meta">
-            <i class="ti ti-topology-star-3 card-icon" />
-            <span class="idx-card-title">Ingress NGINX → Envoy Gateway</span>
-          </div>
-          <p class="idx-card-desc">Migrating from Ingress NGINX to Envoy Gateway reading the live cluster. Barely any documentation exists on this, which is exactly why it's here.</p>
-          <div class="idx-card-footer">
-            <span class="badge badge-blue">Kubernetes</span>
-            <span class="badge badge-gray">Networking</span>
-            <span class="arrow">›</span>
-          </div>
-        </a>
-
-        <a href="/notes/oauth2-proxy-github-sso" class="idx-card">
-          <div class="idx-card-meta">
-            <i class="ti ti-lock card-icon" />
-            <span class="idx-card-title">oauth2-proxy — GitHub SSO for Kubernetes Apps</span>
-          </div>
-          <p class="idx-card-desc">Locking an internal app behind GitHub org membership with nginx ingress auth_request. Setup, identity headers, the rollback trap that causes a full outage, and troubleshooting.</p>
-          <div class="idx-card-footer">
-            <span class="badge badge-blue">Kubernetes</span>
-            <span class="badge badge-gray">DevOps</span>
-            <span class="arrow">›</span>
-          </div>
-        </a>
-
-        <a href="/notes/cloudnativepg-gitops" class="idx-card">
-          <div class="idx-card-meta">
-            <i class="ti ti-database card-icon" />
-            <span class="idx-card-title">CloudNativePG — Postgres on Kubernetes, the GitOps Way</span>
-          </div>
-          <p class="idx-card-desc">Production Postgres with the CNPG operator as a Helm subchart: External Secrets, IRSA-based S3 backups, validation commands, and the password gotcha that broke parsing silently.</p>
-          <div class="idx-card-footer">
-            <span class="badge badge-green">Postgres</span>
-            <span class="badge badge-blue">Kubernetes</span>
-            <span class="arrow">›</span>
+            <span
+              v-for="badge in note.badges"
+              :key="badge.label"
+              class="badge"
+              :class="`badge-${badge.color}`"
+            >{{ badge.label }}</span>
+            <span class="arrow">{{ note.href ? '↗' : '›' }}</span>
           </div>
         </a>
       </section>
@@ -164,6 +42,11 @@
 </template>
 
 <script setup lang="ts">
+import type { Note } from '~/utils/notes'
+
+const entryCount = noteSections.reduce((n, section) => n + section.notes.length, 0)
+const byNewest = (notes: Note[]) => [...notes].sort((a, b) => b.date.localeCompare(a.date))
+
 useHead({ title: 'Build log — Alberto Glez' })
 </script>
 
@@ -243,6 +126,14 @@ useHead({ title: 'Build log — Alberto Glez' })
   font-size: 13.5px;
   font-weight: 500;
   color: var(--color-text);
+}
+
+.idx-card-date {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--color-grey);
+  font-variant-numeric: tabular-nums;
 }
 
 .idx-card-desc {
