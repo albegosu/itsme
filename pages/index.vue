@@ -28,9 +28,11 @@
           <span class="tag tag--accent">Vue 3</span>
           <span class="tag tag--accent">TypeScript</span>
           <span class="tag tag--accent">Node.js</span>
+          <span class="tag tag--accent">Python</span>
+          <span class="tag tag--accent">Swift</span>
           <span class="tag tag--accent">PostgreSQL</span>
+          <span class="tag tag--accent">Kubernetes</span>
           <span class="tag tag--accent">LLMs</span>
-          <span class="tag tag--accent">AI</span>
           <span class="tag tag--accent">RAG</span>
         </div>
       </section>
@@ -56,72 +58,56 @@
         </div>
 
         <div ref="projectsStripRef" class="projects-strip__scroll">
-      <!-- AI Elements Nuxt (featured) -->
-      <article id="projects" class="card card--span2">
-        <p class="card__label">Open Source</p>
-        <p class="card__title">AI Elements Nuxt</p>
-        <p class="card__body">
-          Headless Vue components for AI-native apps in Nuxt. Chat, tool calls, code blocks,
-          voice, and workflow UIs that plug into any design system.
-        </p>
-        <div class="tags">
-          <span class="tag tag--accent">Nuxt</span>
-          <span class="tag tag--accent">Vue 3</span>
-          <span class="tag">Open Source</span>
-          <span class="tag">AI UI</span>
-        </div>
-        <div class="card__links">
-          <a href="https://github.com/albegosu/ai-elements-nuxt" target="_blank" rel="noopener noreferrer" class="card__link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            GitHub
-          </a>
-          <a href="https://albegosu.github.io/albegosu/ai-elements-nuxt.html" target="_blank" rel="noopener noreferrer" class="card__link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            More
-          </a>
+      <!-- Second Brain (featured) -->
+      <article id="projects" class="card card--span2 card--media">
+        <img src="/second-brain.svg" alt="Second Brain: the curated wiki becomes a DESIGN.md, and a coding agent builds a page with it" class="card__img" style="aspect-ratio: 638 / 468;" />
+        <div class="card__media-body">
+          <p class="card__label">Open Source</p>
+          <p class="card__title">Second Brain</p>
+          <p class="card__body">
+            Save UI inspiration from any app. A vision model curates it into a private wiki
+            and turns your taste into a DESIGN.md your coding agent builds from.
+          </p>
+          <div class="tags">
+            <span class="tag tag--accent">AI</span>
+            <span class="tag tag--accent">Python</span>
+            <span class="tag">Open Source</span>
+            <span class="tag">Vision LLM</span>
+          </div>
+          <div class="card__links">
+            <a href="https://github.com/albegosu/second-brain" target="_blank" rel="noopener noreferrer" class="card__link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+            <a href="/notes/second-brain" class="card__link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              Read
+            </a>
+          </div>
         </div>
       </article>
 
-      <!-- Micrographic Skill -->
+      <!-- Honest Arch Diagrams -->
       <article class="card">
-        <p class="card__label">Dev Tool</p>
-        <p class="card__title">Micrographic Skill</p>
+        <p class="card__label">Agent Skill · CLI</p>
+        <p class="card__title">Honest Arch Diagrams</p>
         <p class="card__body">
-          Design-tool product for AI coding agents. Installs a micrographic UI system so
-          generated interfaces look dense, technical, and schematic by default.
+          Request-path diagrams derived from real evidence — Kubernetes, GitOps, Terraform,
+          OpenTelemetry traces. A hop nobody can prove fails the lint and is never drawn.
         </p>
         <div class="tags">
           <span class="tag">Open Source</span>
-          <span class="tag">Dev Tool</span>
+          <span class="tag">Agent Skill</span>
+          <span class="tag">CLI</span>
         </div>
         <div class="card__links">
-          <a href="https://github.com/albegosu/micrographic-skill" target="_blank" rel="noopener noreferrer" class="card__link">
+          <a href="https://github.com/albegosu/honest-arch-diagrams" target="_blank" rel="noopener noreferrer" class="card__link">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
           </a>
-          <a href="https://www.npmjs.com/package/micrographic-skill" target="_blank" rel="noopener noreferrer" class="card__link">
+          <a href="https://www.npmjs.com/package/honest-arch-diagrams" target="_blank" rel="noopener noreferrer" class="card__link">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             npm
-          </a>
-        </div>
-      </article>
-
-      <!-- Cursor guide -->
-      <article class="card">
-        <p class="card__label">Guide</p>
-        <p class="card__title">Cursor — Model Selection & Token Efficiency</p>
-        <p class="card__body">
-          Key takeaways from two Cursor field engineering sessions: planning-first workflow,
-          model routing, context hygiene, and caching traps.
-        </p>
-        <div class="tags">
-          <span class="tag">AI</span>
-          <span class="tag">LLMs</span>
-        </div>
-        <div class="card__links">
-          <a href="https://albegosu.github.io/albegosu/cursor-token-efficiency.html" target="_blank" rel="noopener noreferrer" class="card__link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Read
           </a>
         </div>
       </article>
@@ -151,20 +137,100 @@
         </div>
       </article>
 
-      <!-- Honest Arch Diagrams -->
-      <article class="card">
+      <!-- Micrographic Skill -->
+      <article class="card card--span2 card--media">
+        <img src="/micrographic.png" alt="Micrographic Skill spec plate" class="card__img" style="object-position: left center;" />
+        <div class="card__media-body">
+          <p class="card__label">Agent Skill</p>
+          <p class="card__title">Micrographic Skill</p>
+          <p class="card__body">
+            Dense, technical, schematic UI for AI coding agents. Ships as a SKILL.md for
+            Cursor, Claude Code and Codex, and as a DESIGN.md for any tool that reads one.
+          </p>
+          <div class="tags">
+            <span class="tag">Open Source</span>
+            <span class="tag">Design system</span>
+          </div>
+          <div class="card__links">
+            <a href="https://github.com/albegosu/micrographic-skill" target="_blank" rel="noopener noreferrer" class="card__link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.npmjs.com/package/micrographic-skill" target="_blank" rel="noopener noreferrer" class="card__link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              npm
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- AI Elements Nuxt (featured) -->
+      <article class="card card--span2">
         <p class="card__label">Open Source</p>
-        <p class="card__title">Honest Arch Diagrams</p>
+        <p class="card__title">AI Elements Nuxt</p>
         <p class="card__body">
-          Agent skill for request-path diagrams that separate verified hops from
-          inferred companions — and never invent topology.
+          Nuxt/Vue complement to Vercel AI Elements: headless components for AI-native apps —
+          chat, tool calls, code blocks, voice and workflow UIs that plug into any design system.
+          v1.5 adds an MCP server, an agent skill and a component registry.
         </p>
         <div class="tags">
+          <span class="tag tag--accent">Nuxt</span>
+          <span class="tag tag--accent">Vue 3</span>
           <span class="tag">Open Source</span>
-          <span class="tag">Agent Skill</span>
+          <span class="tag">AI UI</span>
         </div>
         <div class="card__links">
-          <a href="https://github.com/albegosu/honest-arch-diagrams" target="_blank" rel="noopener noreferrer" class="card__link">
+          <a href="https://github.com/albegosu/ai-elements-nuxt" target="_blank" rel="noopener noreferrer" class="card__link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+          <a href="https://albegosu.github.io/ai-elements-nuxt/" target="_blank" rel="noopener noreferrer" class="card__link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Docs
+          </a>
+          <a href="https://www.npmjs.com/package/ai-elements-nuxt" target="_blank" rel="noopener noreferrer" class="card__link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            npm
+          </a>
+        </div>
+      </article>
+
+      <!-- VibeTranslator -->
+      <article class="card">
+        <p class="card__label">macOS</p>
+        <p class="card__title">VibeTranslator</p>
+        <p class="card__body">
+          Write in Spanish, send natural English. One shortcut translates your draft in
+          place — in Discord or any app — and turns rough requests into clear AI prompts.
+        </p>
+        <div class="tags">
+          <span class="tag">macOS</span>
+          <span class="tag">Swift</span>
+          <span class="tag">LLMs</span>
+        </div>
+        <div class="card__links">
+          <a href="https://github.com/albegosu/vibe-translator" target="_blank" rel="noopener noreferrer" class="card__link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+        </div>
+      </article>
+
+
+      <!-- VPN Switcher -->
+      <article class="card">
+        <p class="card__label">macOS</p>
+        <p class="card__title">VPN Switcher</p>
+        <p class="card__body">
+          One menu bar for every client’s VPN — Tailscale, WireGuard, native, or
+          any CLI — from a single YAML file.
+        </p>
+        <div class="tags">
+          <span class="tag">macOS</span>
+          <span class="tag">Swift</span>
+        </div>
+        <div class="card__links">
+          <a href="https://github.com/albegosu/vpn-switcher" target="_blank" rel="noopener noreferrer" class="card__link">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
           </a>
@@ -191,26 +257,6 @@
               Visit
             </a>
           </div>
-        </div>
-      </article>
-
-      <!-- VPN Switcher -->
-      <article class="card">
-        <p class="card__label">macOS</p>
-        <p class="card__title">VPN Switcher</p>
-        <p class="card__body">
-          One menu bar for every client’s VPN — Tailscale, WireGuard, native, or
-          any CLI — from a single YAML file.
-        </p>
-        <div class="tags">
-          <span class="tag">macOS</span>
-          <span class="tag">Swift</span>
-        </div>
-        <div class="card__links">
-          <a href="https://github.com/albegosu/vpn-switcher" target="_blank" rel="noopener noreferrer" class="card__link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            GitHub
-          </a>
         </div>
       </article>
 
@@ -243,8 +289,8 @@
           <span class="tag">Workshop</span>
         </div>
         <div class="card__links">
-          <a href="https://albegosu.github.io/albegosu/problem-solving.html" target="_blank" rel="noopener noreferrer" class="card__link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <a href="/notes/problem-solving" class="card__link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
             Read
           </a>
         </div>
@@ -306,7 +352,7 @@
           <div class="role">
             <div class="role__header">
               <p class="role__title">Full Stack Engineer</p>
-              <p class="role__period">Nov 2025 — present</p>
+              <p class="role__period">Nov 2025 — May 2026</p>
             </div>
             <p class="card__body">
               Working across the full product: what the user sees, the services that power it,
@@ -350,16 +396,6 @@
       </article>
 
       <article class="card">
-        <p class="card__subtitle">Align Technology Inc.</p>
-        <p class="card__title">Sr. Specialist CAD Designer</p>
-        <p class="card__body">
-          Led a team of 50 in a high-output global production environment. Goal-based
-          organisation, inventory metrics, continuous improvement.
-        </p>
-        <p class="card__period">2018 — 2022</p>
-      </article>
-
-      <article class="card">
         <p class="card__subtitle">MyL Ideas</p>
         <p class="card__title">Production Manager</p>
         <p class="card__body">
@@ -367,6 +403,16 @@
           production timelines, and quality control.
         </p>
         <p class="card__period">2022 — 2023</p>
+      </article>
+
+      <article class="card">
+        <p class="card__subtitle">Align Technology Inc.</p>
+        <p class="card__title">Sr. Specialist CAD Designer</p>
+        <p class="card__body">
+          Led a team of 50 in a high-output global production environment. Goal-based
+          organisation, inventory metrics, continuous improvement.
+        </p>
+        <p class="card__period">2018 — 2022</p>
       </article>
 
       <article class="card">
@@ -427,9 +473,9 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
             <span>Public roadmap</span>
           </a>
-          <a href="https://albegosu.github.io/albegosu/" target="_blank" rel="noopener noreferrer" class="find-link">
+          <a href="/notes" class="find-link">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <span>Notes & Guides</span>
+            <span>Build log</span>
           </a>
         </div>
       </aside>
@@ -442,13 +488,14 @@
 const { public: { githubProjectUrl } } = useRuntimeConfig()
 const projectsStripRef = ref<HTMLElement | null>(null)
 const activeProject = ref(0)
-const projectCount = 10
+const projectCount = ref(0)
 
 onMounted(() => {
   const strip = projectsStripRef.value
   if (!strip) return
 
   const cards = strip.querySelectorAll<HTMLElement>('.card')
+  projectCount.value = cards.length
 
   const updateActiveProject = () => {
     const stripRect = strip.getBoundingClientRect()
