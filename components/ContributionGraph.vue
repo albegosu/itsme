@@ -37,7 +37,7 @@
       <a href="https://github.com/albegosu" target="_blank" rel="noopener noreferrer">See it on GitHub</a>
     </p>
 
-    <div v-else class="contrib__scroll">
+    <div v-else ref="scrollRef" class="contrib__scroll">
       <div class="contrib__plot">
         <div class="contrib__months" aria-hidden="true">
           <span
@@ -132,6 +132,13 @@ const { data, pending, error } = useFetch<ContributionsResponse>(
     server: false,
   },
 )
+
+const scrollRef = ref<HTMLElement | null>(null)
+
+// On narrow screens the calendar overflows: open it on the latest weeks, not a year ago
+watch(scrollRef, (el) => {
+  if (el) el.scrollLeft = el.scrollWidth
+}, { flush: 'post' })
 
 const total = computed(() => data.value?.total?.lastYear ?? 0)
 const formattedTotal = computed(() => total.value.toLocaleString('en-US'))

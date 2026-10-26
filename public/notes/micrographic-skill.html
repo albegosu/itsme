@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Micrographic Skill — Product</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/dist/tabler-icons.min.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
   }
-  .container { max-width: 820px; margin: 0 auto; flex: 1; }
+  .container { width: 100%; max-width: 820px; margin: 0 auto; flex: 1; }
   .page-header { margin-bottom: 1rem; }
   .back-button {
     display: inline-flex;
@@ -124,8 +124,7 @@
 <script>
   (function() {
     var saved = localStorage.getItem("theme");
-    var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (saved === "dark" || (!saved && prefersDark)) {
+    if (saved !== "light") {
       document.documentElement.classList.add("dark");
     }
   })();
@@ -134,7 +133,7 @@
 <body>
 <div class="container">
   <header class="page-header">
-    <a class="back-button" href="/notes" target="_top"><i class="ti ti-arrow-left"></i>Back to index</a>
+    <a class="back-button" href="/notes" target="_top"><i class="ti ti-arrow-left"></i> Build log</a>
     <h1>Micrographic Skill</h1>
     <p>My product for AI coding agents to generate dense, technical, schematic UI.</p>
   </header>

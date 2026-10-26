@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Second Brain — Product</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/dist/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    background: #f5f5f0;
+    color: #1a1a18;
+    padding: 2.5rem 1.25rem 0 1.25rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .container { width: 100%; max-width: 820px; margin: 0 auto; flex: 1; }
+  .page-header { margin-bottom: 1rem; }
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #5f5e5a;
+    text-decoration: none;
+    background: #ffffff;
+    border: 0.5px solid rgba(0,0,0,0.11);
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin-bottom: 12px;
+  }
+  .back-button:hover { color: #1a1a18; border-color: rgba(0,0,0,0.18); }
+  .page-header h1 { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+  .page-header p { font-size: 14px; color: #888780; }
+  .section { margin-bottom: 2rem; }
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #888780;
+    margin-bottom: 0.75rem;
+  }
+  .card {
+    background: #ffffff;
+    border: 0.5px solid rgba(0,0,0,0.11);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+  }
+  .card + .card { margin-top: 10px; }
+  .card-title { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+  .card-body { font-size: 13px; color: #5f5e5a; line-height: 1.6; }
+  .card-body + .card-body { margin-top: 6px; }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-right: 6px;
+    margin-bottom: 8px;
+  }
+  .badge-gray { background: #f1efe8; color: #5f5e5a; }
+  .badge-blue { background: #E6F1FB; color: #185FA5; }
+  .badge-green { background: #EAF3DE; color: #3B6D11; }
+  code {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 12px;
+    background: #f1efe8;
+    padding: 1px 5px;
+    border-radius: 4px;
+    color: #444441;
+  }
+  .figure {
+    margin-bottom: 2rem;
+    border: 0.5px solid rgba(0,0,0,0.11);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .figure img { display: block; width: 100%; height: auto; }
+  .steps { list-style: none; counter-reset: step; }
+  .steps li {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 4px;
+    font-size: 13px;
+    color: #5f5e5a;
+    line-height: 1.6;
+  }
+  .steps li + li { margin-top: 8px; }
+  .steps li::before {
+    content: counter(step, decimal-leading-zero);
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 11px;
+    color: #993C1D;
+    padding-top: 2px;
+  }
+  .steps strong { color: #1a1a18; font-weight: 500; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .grid .card + .card { margin-top: 0; }
+  .code-block {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    background: #f1efe8;
+    color: #444441;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin: 8px 0;
+    white-space: pre;
+    overflow-x: auto;
+  }
+  .links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    text-decoration: none;
+    color: #1a1a18;
+    background: #ffffff;
+    border: 0.5px solid rgba(0,0,0,0.13);
+    border-radius: 8px;
+    padding: 6px 10px;
+  }
+  .link-btn:hover { border-color: rgba(0,0,0,0.22); }
+  .site-footer {
+    padding: 1.25rem 0;
+    text-align: center;
+    font-size: 12px;
+    color: #b4b2a9;
+    border-top: 0.5px solid rgba(0,0,0,0.08);
+  }
+  .site-footer a {
+    color: #888780;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .site-footer a:hover { color: #1a1a18; }
+
+  @media (max-width: 640px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  html.dark body { background-color: #121212; background-image: radial-gradient(circle, #212121 1px, transparent 1px); background-size: 22px 22px; color: #e8e6df; }
+  html.dark .back-button,
+  html.dark .card,
+  html.dark .link-btn { background: #252523; border-color: rgba(255,255,255,0.09); color: #e8e6df; }
+  html.dark .figure { border-color: rgba(255,255,255,0.09); }
+  html.dark .page-header p,
+  html.dark .section-label,
+  html.dark .card-body,
+  html.dark .steps li { color: #a8a69f; }
+  html.dark .steps strong { color: #e8e6df; }
+  html.dark .steps li::before { color: #F0997B; }
+  html.dark .badge-gray { background: #2c2c2a; color: #888780; }
+  html.dark .badge-blue { background: #042C53; color: #B5D4F4; }
+  html.dark .badge-green { background: #173404; color: #C0DD97; }
+  html.dark code,
+  html.dark .code-block { background: #2c2c2a; color: #c8c6bf; }
+  html.dark .site-footer { border-top-color: rgba(255,255,255,0.07); color: #555450; }
+  html.dark .site-footer a { color: #888780; }
+  html.dark .site-footer a:hover { color: #e8e6df; }
+</style>
+<script>
+  (function() {
+    var saved = localStorage.getItem("theme");
+    if (saved !== "light") {
+      document.documentElement.classList.add("dark");
+    }
+  })();
+</script>
+</head>
+<body>
+<div class="container">
+  <header class="page-header">
+    <a class="back-button" href="/notes" target="_top"><i class="ti ti-arrow-left"></i> Build log</a>
+    <h1>Second Brain</h1>
+    <p>Save UI inspiration from any app. A vision model curates it into a private wiki and turns your taste into a DESIGN.md your coding agent builds from.</p>
+  </header>
+
+  <div class="figure">
+    <img src="/notes/second-brain-flow.svg" alt="The flow in four steps: share a post, page, screenshot or photo from any app; a vision model reads it, measures its palette and files it into a wiki topic; the taste becomes a DESIGN.md with color, type and radius tokens; a coding agent builds a card with those tokens.">
+  </div>
+
+  <section class="section">
+    <p class="section-label">Overview</p>
+    <div class="card">
+      <span class="badge badge-gray">Product</span>
+      <span class="badge badge-blue">Python</span>
+      <span class="badge badge-green">Open Source</span>
+      <p class="card-body">I collect references as I scroll: UI demos, product behaviours worth copying, tools to try. In a bookmarks folder they rot. Second Brain turns every share into a Markdown wiki in my own repository, and Claude checks that wiki before it designs or builds anything.</p>
+      <p class="card-body">The repository is the engine. The wiki lives in a separate private repository, written by a worker and read by the agent.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">The loop</p>
+    <div class="card">
+      <ol class="steps">
+        <li><span><strong>Share</strong> a post from X, Instagram or LinkedIn, any page, a screenshot or a photo — from the share sheet on iPhone or Mac, an installable capture page on Android and desktop, or the command line.</span></li>
+        <li><span><strong>Queue.</strong> A cloud inbox accepts it instantly, even with every computer off.</span></li>
+        <li><span><strong>Understand.</strong> A worker on GitHub Actions downloads the media, samples frames across the video, measures the palette from pixels and asks a vision model for patterns, style and a topic.</span></li>
+        <li><span><strong>File.</strong> A source note keeps the extraction verbatim, the topic page absorbs what's new and cites it, and the change is committed to the wiki.</span></li>
+        <li><span><strong>Use.</strong> The <code>second-brain</code> skill reads the index, opens only the relevant topics and cites them while Claude builds. Other agents read it over a read-only MCP server.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">What sets it apart</p>
+    <div class="grid">
+      <div class="card">
+        <p class="card-title">It sees how interfaces move</p>
+        <p class="card-body">Frames are sampled across the whole video and each interaction is described as a trigger, numbered steps and animated properties. Other tools index what a video says, not what the screen does.</p>
+      </div>
+      <div class="card">
+        <p class="card-title">It measures instead of guessing</p>
+        <p class="card-body">The palette comes from pixels, traits from a closed vocabulary. Durations and easing curves are left out on purpose: still frames can't measure them.</p>
+      </div>
+      <div class="card">
+        <p class="card-title">A wiki you own, built for an agent</p>
+        <p class="card-body">Topic pages synthesise several captures with inline citations. Code writes the structure and the model writes the prose, so a bad answer can spoil a paragraph but never the navigation.</p>
+      </div>
+      <div class="card">
+        <p class="card-title">Your own DESIGN.md</p>
+        <p class="card-body">Your taste across every capture, or any single saved style, becomes a lint-clean DESIGN.md with tokens derived by code. getdesign.md gives you Stripe's; this gives you yours.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">Outputs</p>
+    <div class="card">
+      <p class="card-body"><code>wiki/</code> one page per topic and one source note per capture, kept tidy by a weekly lint pass.</p>
+      <p class="card-body"><code>taste.md</code> the choices I keep making, as a default look and motion.</p>
+      <p class="card-body"><code>DESIGN.md</code> that taste as design tokens, with a dark or light twin when captures split.</p>
+      <p class="card-body"><code>AGENTS.md</code> the ideas from what I read, as rules a coding agent follows.</p>
+      <p class="card-body"><code>stack.md</code> the tools I saved, by job: used, to try or stale.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">Quick start</p>
+    <div class="card">
+      <p class="card-body">Needs <code>gh</code> logged in and a model key: a free Ollama key by default, or OpenAI, Anthropic, Gemini or OpenRouter.</p>
+      <div class="code-block">git clone https://github.com/albegosu/second-brain ~/Developer/second-brain
+cd ~/Developer/second-brain
+bin/setup</div>
+      <p class="card-body"><code>bin/setup</code> creates the private wiki and inbox repositories, wires them together and prints how to connect the iPhone Shortcut or the capture page.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">Links</p>
+    <div class="card">
+      <div class="links">
+        <a class="link-btn" href="https://github.com/albegosu/second-brain" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>GitHub Repository</a>
+        <a class="link-btn" href="https://github.com/albegosu/second-brain/blob/main/PRODUCT.md" target="_blank" rel="noopener"><i class="ti ti-file-text"></i>Product definition</a>
+        <a class="link-btn" href="https://albegosu.github.io/second-brain/" target="_blank" rel="noopener"><i class="ti ti-device-mobile"></i>Capture page</a>
+      </div>
+    </div>
+  </section>
+</div>
+<footer class="site-footer">
+  <a href="/notes" target="_top">← Build log</a>
+</footer>
+</body>
+</html>

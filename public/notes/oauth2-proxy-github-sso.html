@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>oauth2-proxy — GitHub SSO for Kubernetes Apps</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/dist/tabler-icons.min.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -21,7 +21,7 @@
     flex-direction: column;
   }
 
-  .container { max-width: 820px; margin: 0 auto; flex: 1; }
+  .container { width: 100%; max-width: 820px; margin: 0 auto; flex: 1; }
 
   /* Header */
   .page-header { margin-bottom: 1rem; }
@@ -294,8 +294,7 @@
 
   <div class="page-header">
     <a class="back-button" href="/notes" target="_top">
-      <i class="ti ti-arrow-left"></i>
-      Back to home
+      <i class="ti ti-arrow-left"></i> Build log
     </a>
     <h1>oauth2-proxy — GitHub SSO for Kubernetes Apps</h1>
     <p>Locking an internal app behind GitHub org membership with nginx ingress + oauth2-proxy — and the traps I hit doing it in production</p>
