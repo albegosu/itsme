@@ -1,0 +1,179 @@
+/*
+ * Site theme for build log notes.
+ *
+ * Each note is a standalone HTML page with its own inline styles. When a note is
+ * shown at /notes/<slug>, pages/notes/[slug].vue tags the iframe's <html> with
+ * `.itsme` and appends this stylesheet, so the note picks up the site's type,
+ * neutrals and editorial chrome without editing every file. The note's own
+ * layout and components stay as they are.
+ *
+ * Specificity: `html.itsme .x` ties with the notes' `html.dark .x` rules and wins
+ * because it loads later. Colours therefore go through variables, which switch
+ * under `html.itsme.dark`, so one rule serves both themes.
+ */
+
+html.itsme {
+  --n-bg: hsl(0, 0%, 98%);
+  --n-dot: hsl(0, 0%, 88%);
+  --n-text: hsl(0, 0%, 6%);
+  --n-text-2: hsl(0, 0%, 30%);
+  --n-grey: hsl(0, 0%, 45%);
+  --n-card: hsl(0, 0%, 100%);
+  --n-sunk: hsl(0, 0%, 94%);
+  --n-border: hsl(0, 0%, 88%);
+  --n-rule: hsl(0, 0%, 80%);
+  --n-sans: 'General Sans', system-ui, -apple-system, sans-serif;
+  --n-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+html.itsme.dark {
+  --n-bg: hsl(0, 0%, 7%);
+  --n-dot: hsl(0, 0%, 13%);
+  --n-text: hsl(0, 0%, 95%);
+  --n-text-2: hsl(0, 0%, 68%);
+  --n-grey: hsl(0, 0%, 50%);
+  --n-card: hsl(0, 0%, 11%);
+  --n-sunk: hsl(0, 0%, 15%);
+  --n-border: hsl(0, 0%, 17%);
+  --n-rule: hsl(0, 0%, 26%);
+}
+
+/* ─── Page ───────────────────────────────────────────────────────────────── */
+html.itsme body {
+  font-family: var(--n-sans);
+  background-color: var(--n-bg);
+  background-image: radial-gradient(circle, var(--n-dot) 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: var(--n-text);
+  padding: 72px 40px 0;
+}
+
+/* ─── Header: mono back link, large title, lead ─────────────────────────── */
+html.itsme .page-header { margin-bottom: 56px; }
+
+html.itsme .back-button {
+  /* own line: several notes put their tag badges right after it */
+  display: flex;
+  width: fit-content;
+  font-family: var(--n-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--n-grey);
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 28px;
+}
+
+html.itsme .back-button:hover { color: var(--n-text); }
+
+html.itsme .page-header h1 {
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--n-text);
+  margin-bottom: 16px;
+  text-wrap: balance;
+}
+
+html.itsme .page-header p {
+  max-width: 52ch;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--n-text-2);
+}
+
+/* ─── Sections: same numbered-rule look as the site ─────────────────────── */
+html.itsme .section { margin-bottom: 56px; }
+
+html.itsme .section-label {
+  font-family: var(--n-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--n-text);
+  padding-top: 12px;
+  border-top: 1px solid var(--n-rule);
+  margin-bottom: 16px;
+}
+
+/* ─── Surfaces ───────────────────────────────────────────────────────────── */
+html.itsme .card,
+html.itsme .link-btn {
+  background: var(--n-card);
+  border-color: var(--n-border);
+  color: var(--n-text);
+}
+
+html.itsme .card { border-radius: 14px; }
+
+html.itsme .card-title,
+html.itsme .card-body strong,
+html.itsme .callout strong,
+html.itsme .insight strong,
+html.itsme .rule-text,
+html.itsme .steps strong,
+html.itsme .data-table td { color: var(--n-text); }
+
+html.itsme .card-title { font-weight: 600; }
+
+html.itsme .card-body,
+html.itsme .callout,
+html.itsme .insight,
+html.itsme .rule-text .muted,
+html.itsme .steps li,
+html.itsme .data-table td:last-child { color: var(--n-text-2); }
+
+html.itsme .card-icon,
+html.itsme .data-table th,
+html.itsme .flow-step .step-num { color: var(--n-grey); }
+
+html.itsme .flow-step,
+html.itsme .callout:not(.warn) { background: var(--n-sunk); color: var(--n-text); }
+
+html.itsme .callout:not(.warn) { color: var(--n-text-2); }
+
+html.itsme .data-table th,
+html.itsme .data-table td { border-bottom-color: var(--n-border); }
+
+/* ─── Mono details ───────────────────────────────────────────────────────── */
+html.itsme code,
+html.itsme .code-block,
+html.itsme .card-body code {
+  font-family: var(--n-mono);
+  background: var(--n-sunk);
+  color: var(--n-text);
+}
+
+html.itsme .code-block { border-color: var(--n-border); }
+
+html.itsme .badge,
+html.itsme .data-table th,
+html.itsme .flow-step .step-num,
+html.itsme .flow-step .step-model {
+  font-family: var(--n-mono);
+  letter-spacing: 0.02em;
+}
+
+html.itsme .badge { border-radius: 4px; font-size: 10.5px; }
+
+/* ─── Footer ─────────────────────────────────────────────────────────────── */
+html.itsme .site-footer {
+  font-family: var(--n-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-top-color: var(--n-border);
+}
+
+html.itsme .site-footer a { color: var(--n-grey); }
+html.itsme .site-footer a:hover { color: var(--n-text); }
+
+@media (max-width: 640px) {
+  html.itsme body { padding: 16px 20px 0; }
+  html.itsme .page-header { margin-bottom: 40px; }
+  html.itsme .page-header p { font-size: 16px; }
+  html.itsme .section { margin-bottom: 44px; }
+}

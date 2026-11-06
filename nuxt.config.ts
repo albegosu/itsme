@@ -22,6 +22,11 @@ export default defineNuxtConfig({
         provider: 'fontshare',
         weights: [400, 500, 600],
       },
+      {
+        name: 'JetBrains Mono',
+        provider: 'google',
+        weights: [400, 500],
+      },
     ],
   },
 
